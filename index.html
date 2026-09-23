@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colchonería y Blanquería Gala | Descansá como te lo merecés</title>
+<meta name="description" content="Colchones, bases, conjuntos, sábanas y acolchados. Catálogo online y ofertas, pedí por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --marron:#8a5a3b;
+    --marron-osc:#5e3b24;
+    --crema:#f6efe6;
+    --crema-2:#efe4d4;
+    --carbon:#1b1b1b;
+    --carbon-2:#2a2a2a;
+    --texto:#2c2420;
+    --texto-suave:#6b5f56;
+    --blanco:#ffffff;
+    --precio:#a3372a;
+    --exito:#25d366;
+    --radius:14px;
+    --sombra:0 8px 24px rgba(0,0,0,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',Arial,sans-serif;
+    color:var(--texto);
+    background:var(--blanco);
+    line-height:1.5;
+  }
+  h1,h2,h3,.marca{font-family:'Poppins',Arial,sans-serif;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+  ul{list-style:none;}
+  .oculto{display:none !important;}
+  .contenedor{max-width:1180px;margin:0 auto;padding:0 20px;}
+
+  /* ===================== NAV ===================== */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:var(--blanco);
+    border-bottom:1px solid #eee0d0;
+  }
+  .nav-barra{
+    max-width:1180px;margin:0 auto;padding:14px 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:20px;
+  }
+  .marca{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--marron-osc);}
+  .marca-logo{
+    width:38px;height:38px;border-radius:10px;
+    background:linear-gradient(135deg,var(--marron),var(--marron-osc));
+    display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;
+  }
+  nav.nav-links{display:flex;align-items:center;gap:28px;}
+  .nav-item{position:relative;}
+  .nav-link{
+    font-weight:500;font-size:15px;color:var(--texto);
+    display:flex;align-items:center;gap:4px;padding:8px 0;
+  }
+  .nav-link:hover{color:var(--marron-osc);}
+  .nav-caret{font-size:10px;transition:transform .2s;}
+  .nav-item.abierto .nav-caret{transform:rotate(180deg);}
+  .submenu{
+    position:absolute;top:100%;left:0;
+    background:#fff;border-radius:10px;box-shadow:var(--sombra);
+    min-width:190px;padding:8px;display:none;
+    border:1px solid #eee0d0;
+  }
+  .nav-item.abierto .submenu{display:block;}
+  .submenu a{
+    display:block;padding:9px 12px;border-radius:7px;font-size:14px;
+  }
+  .submenu a:hover{background:var(--crema);}
+  .btn-catalogo{
+    background:var(--carbon);color:#fff;padding:10px 20px;
+    border-radius:30px;font-size:14px;font-weight:600;white-space:nowrap;
+  }
+  .btn-catalogo:hover{background:var(--carbon-2);}
+  .nav-toggle{display:none;font-size:22px;background:none;color:var(--texto);}
+
+  @media (max-width:820px){
+    nav.nav-links{
+      position:fixed;inset:0 0 0 auto;top:66px;
+      flex-direction:column;align-items:flex-start;
+      background:#fff;width:78%;max-width:300px;height:calc(100vh - 66px);
+      padding:20px;box-shadow:-6px 0 20px rgba(0,0,0,.1);
+      transform:translateX(100%);transition:transform .25s ease;
+      gap:6px;overflow-y:auto;
+    }
+    nav.nav-links.abierto{transform:translateX(0);}
+    .nav-item{width:100%;}
+    .submenu{position:static;box-shadow:none;border:none;display:none;padding-left:10px;}
+    .nav-item.abierto .submenu{display:block;}
+    .btn-catalogo{width:100%;text-align:center;margin-top:10px;}
+    .nav-toggle{display:block;}
+  }
+
+  /* ===================== HERO ===================== */
+  .hero{
+    position:relative;height:min(70vh,560px);min-height:360px;
+    overflow:hidden;background:var(--carbon);
+  }
+  .hero-slide{
+    position:absolute;inset:0;
+    background-size:cover;background-position:center;
+    opacity:0;transition:opacity 1s ease;
+  }
+  .hero-slide.activa{opacity:1;}
+  .hero-slide::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.55));
+  }
+  .hero-texto{
+    position:absolute;inset:0;display:flex;flex-direction:column;
+    align-items:flex-start;justify-content:center;
+    max-width:1180px;margin:0 auto;left:0;right:0;padding:0 20px;color:#fff;z-index:2;
+  }
+  .hero-texto span{
+    background:var(--marron);padding:5px 14px;border-radius:20px;
+    font-size:13px;font-weight:600;margin-bottom:16px;
+  }
+  .hero-texto h1{font-size:clamp(28px,5vw,48px);max-width:600px;margin-bottom:14px;}
+  .hero-texto p{font-size:16px;max-width:480px;margin-bottom:22px;color:#f1e9df;}
+  .hero-cta{
+    background:#fff;color:var(--texto);padding:13px 26px;border-radius:30px;
+    font-weight:600;font-size:15px;
+  }
+  .hero-cta:hover{background:var(--crema);}
+  .hero-flecha{
+    position:absolute;top:50%;transform:translateY(-50%);z-index:3;
+    width:44px;height:44px;border-radius:50%;
+    background:rgba(255,255,255,.85);color:var(--texto);
+    display:flex;align-items:center;justify-content:center;font-size:18px;
+  }
+  .hero-flecha:hover{background:#fff;}
+  .hero-flecha.izq{left:16px;}
+  .hero-flecha.der{right:16px;}
+  .hero-dots{
+    position:absolute;bottom:18px;left:0;right:0;z-index:3;
+    display:flex;justify-content:center;gap:8px;
+  }
+  .hero-dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.5);}
+  .hero-dot.activo{background:#fff;}
+
+  /* ===================== SECCIONES GENERALES ===================== */
+  section{padding:64px 0;}
+  .titulo-seccion{text-align:center;margin-bottom:40px;}
+  .titulo-seccion h2{font-size:clamp(24px,4vw,34px);margin-bottom:10px;color:var(--texto);}
+  .titulo-seccion p{color:var(--texto-suave);font-size:15px;max-width:520px;margin:0 auto;}
+
+  /* ===================== COLECCION / CATEGORIAS ===================== */
+  .grid-categorias{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+  }
+  .cat-card{
+    position:relative;border-radius:var(--radius);overflow:hidden;
+    height:220px;background-size:cover;background-position:center;
+    box-shadow:var(--sombra);
+  }
+  .cat-card::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.72) 100%);
+  }
+  .cat-card-etq{
+    position:absolute;left:0;right:0;bottom:0;z-index:2;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 18px;color:#fff;
+  }
+  .cat-card-etq span{font-weight:600;font-size:16px;}
+  .cat-card-flecha{
+    width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.2);
+    display:flex;align-items:center;justify-content:center;font-size:14px;
+    transition:transform .2s;
+  }
+  .cat-card:hover .cat-card-flecha{transform:translateX(3px);background:var(--marron);}
+  @media (max-width:820px){.grid-categorias{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:520px){.grid-categorias{grid-template-columns:1fr;}}
+
+  /* ===================== TESTIMONIOS ===================== */
+  .testimonios-wrap{position:relative;}
+  .testimonios-track{
+    display:flex;gap:18px;overflow-x:auto;scroll-behavior:smooth;
+    padding-bottom:10px;scrollbar-width:none;
+  }
+  .testimonios-track::-webkit-scrollbar{display:none;}
+  .testi-card{
+    flex:0 0 300px;background:var(--crema);border-radius:var(--radius);
+    padding:22px;border:1px solid #eee0d0;
+  }
+  .testi-top{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+  .testi-avatar{
+    width:40px;height:40px;border-radius:50%;color:#fff;font-weight:700;
+    display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;
+  }
+  .testi-nombre{font-weight:600;font-size:14px;}
+  .testi-estrellas{color:#e0a339;font-size:13px;}
+  .testi-cita{font-size:14px;color:var(--texto-suave);margin-bottom:12px;min-height:60px;}
+  .testi-verif{font-size:12px;color:#5b8f5f;font-weight:600;}
+  .testi-flechas{display:flex;justify-content:center;gap:12px;margin-top:20px;}
+  .testi-flecha{
+    width:38px;height:38px;border-radius:50%;background:var(--crema-2);
+    display:flex;align-items:center;justify-content:center;font-size:15px;
+  }
+  .testi-flecha:hover{background:var(--marron);color:#fff;}
+
+  /* ===================== FOOTER / CONTACTO ===================== */
+  footer.contacto{background:var(--carbon);color:#fff;padding:60px 0 0;}
+  .contacto-titulo{text-align:center;margin-bottom:36px;}
+  .contacto-titulo h2{font-size:clamp(24px,4vw,32px);margin-bottom:10px;}
+  .contacto-titulo p{color:#c9c1b8;font-size:14px;max-width:440px;margin:0 auto;}
+  .grid-contacto{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:50px;
+  }
+  .contacto-card{
+    background:var(--carbon-2);border-radius:var(--radius);padding:26px 18px;
+    text-align:center;
+  }
+  .contacto-card:hover{background:#333;}
+  .contacto-icono{
+    width:46px;height:46px;border-radius:50%;background:#3a3a3a;
+    display:flex;align-items:center;justify-content:center;font-size:19px;
+    margin:0 auto 14px;
+  }
+  .contacto-card h3{font-size:15px;margin-bottom:6px;}
+  .contacto-card p{font-size:13px;color:#c9c1b8;}
+  @media (max-width:760px){.grid-contacto{grid-template-columns:1fr;}}
+
+  .footer-final{
+    border-top:1px solid #333;padding:20px;
+    display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;
+  }
+  .footer-final p{font-size:13px;color:#a39a90;}
+  .footer-redes{display:flex;gap:12px;}
+  .footer-redes a{
+    width:36px;height:36px;border-radius:50%;background:var(--carbon-2);
+    display:flex;align-items:center;justify-content:center;font-size:15px;
+  }
+  .footer-redes a:hover{background:var(--marron);}
+
+  /* ===================== WHATSAPP FLOTANTE ===================== */
+  .whatsapp-flotante{
+    position:fixed;right:20px;bottom:20px;z-index:60;
+    width:58px;height:58px;border-radius:50%;background:var(--exito);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:28px;
+    box-shadow:0 6px 18px rgba(0,0,0,.25);
+  }
+  .whatsapp-flotante:hover{transform:scale(1.06);}
+
+  /* ===================== PANTALLAS CATALOGO / OFERTAS ===================== */
+  .pantalla-catalogo{
+    display:none;
+    min-height:60vh;
+    padding:36px 0 70px;
+  }
+  .pantalla-catalogo.activa{display:block;}
+  #vista-principal.oculta{display:none;}
+
+  .catalogo-cabecera{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+    gap:16px;margin-bottom:26px;
+  }
+  .catalogo-volver{
+    font-size:14px;font-weight:600;color:var(--marron-osc);
+    display:flex;align-items:center;gap:6px;
+  }
+  .catalogo-volver:hover{text-decoration:underline;}
+  .catalogo-titulo h2{font-size:26px;}
+  .catalogo-titulo p{font-size:13px;color:var(--texto-suave);}
+
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;}
+  .chip{
+    padding:9px 16px;border-radius:30px;font-size:13px;font-weight:600;
+    background:var(--crema);color:var(--texto);border:1px solid #eee0d0;
+  }
+  .chip:hover{background:var(--crema-2);}
+  .chip.activo{background:var(--carbon);color:#fff;border-color:var(--carbon);}
+
+  .grid-productos{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+  }
+  @media (max-width:980px){.grid-productos{grid-template-columns:repeat(3,1fr);}}
+  @media (max-width:720px){.grid-productos{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:460px){.grid-productos{grid-template-columns:1fr;}}
+
+  .prod-card{
+    background:#fff;border:1px solid #eee0d0;border-radius:var(--radius);
+    overflow:hidden;display:flex;flex-direction:column;
+    box-shadow:0 2px 10px rgba(0,0,0,.04);
+  }
+  .prod-img-wrap{position:relative;height:170px;background:#eee;}
+  .prod-img-wrap img{width:100%;height:100%;object-fit:cover;}
+  .prod-badge{
+    position:absolute;top:10px;left:10px;
+    background:var(--carbon);color:#fff;font-size:11px;font-weight:700;
+    padding:4px 9px;border-radius:6px;
+  }
+  .prod-body{padding:14px 14px 16px;display:flex;flex-direction:column;gap:6px;flex:1;}
+  .prod-cat{font-size:11px;text-transform:uppercase;letter-spacing:.03em;color:var(--texto-suave);}
+  .prod-nombre{font-size:14.5px;font-weight:600;color:var(--marron-osc);min-height:38px;}
+  .prod-precios{margin-top:2px;}
+  .prod-precio-lista{font-size:12px;color:#9a9086;text-decoration:line-through;}
+  .prod-precio-final{font-size:19px;font-weight:700;color:var(--precio);}
+  .prod-precio-nota{font-size:11px;color:var(--texto-suave);margin-bottom:6px;}
+  .btn-consultar{
+    margin-top:auto;background:var(--carbon);color:#fff;
+    padding:10px 12px;border-radius:8px;font-size:13.5px;font-weight:600;
+    text-align:center;display:flex;align-items:center;justify-content:center;gap:6px;
+  }
+  .btn-consultar:hover{background:var(--carbon-2);}
+
+  .sin-resultados{
+    text-align:center;padding:60px 20px;color:var(--texto-suave);font-size:14px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<header class="nav">
+  <div class="nav-barra">
+    <a href="#/" class="marca" onclick="irVista('inicio')">
+      <span class="marca-logo">🛏️</span>
+      Gala
+    </a>
+
+    <nav class="nav-links" id="nav-links">
+      <div class="nav-item">
+        <a href="#/" class="nav-link" onclick="irVista('inicio')">Inicio</a>
+      </div>
+
+      <div class="nav-item" id="item-productos">
+        <button class="nav-link" type="button" onclick="toggleSubmenu(event)">
+          Productos <span class="nav-caret">▾</span>
+        </button>
+        <div class="submenu">
+          <a href="#/categoria/colchones" onclick="irCategoria('colchones')">Colchones</a>
+          <a href="#/categoria/bases" onclick="irCategoria('bases')">Bases</a>
+          <a href="#/categoria/conjuntos" onclick="irCategoria('conjuntos')">Conjuntos</a>
+          <a href="#/categoria/sabanas" onclick="irCategoria('sabanas')">Sábanas</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="#testimonios" class="nav-link" onclick="cerrarMenuMovil()">Testimonios</a>
+      </div>
+      <div class="nav-item">
+        <a href="#contacto" class="nav-link" onclick="cerrarMenuMovil()">Contacto</a>
+      </div>
+      <div class="nav-item">
+        <a href="#/ofertas" class="nav-link" onclick="irOfertas()">Ofertas</a>
+      </div>
+
+      <a href="#/catalogo" class="btn-catalogo" onclick="irCatalogo()">Catálogo Online</a>
+    </nav>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" onclick="toggleMenuMovil()">☰</button>
+  </div>
+</header>
+
+<!-- ============================================================
+     VISTA PRINCIPAL (landing): hero + colección + testimonios + contacto
+     ============================================================ -->
+<div id="vista-principal">
+
+  <!-- HERO CARRUSEL -->
+  <section class="hero" id="hero">
+    <!-- Slides inyectados por JS -->
+    <div class="hero-texto">
+      <span>Envíos a todo Villa Carlos Paz</span>
+      <h1>Descansá como te lo merecés</h1>
+      <p>Colchones, bases y conjuntos con la mejor relación calidad-precio. Asesoramiento personalizado por WhatsApp.</p>
+      <a class="hero-cta" href="#/catalogo" onclick="irCatalogo()">Ver catálogo online</a>
+    </div>
+    <button class="hero-flecha izq" aria-label="Anterior" onclick="heroMover(-1)">&#8592;</button>
+    <button class="hero-flecha der" aria-label="Siguiente" onclick="heroMover(1)">&#8594;</button>
+    <div class="hero-dots" id="hero-dots"></div>
+  </section>
+
+  <!-- COLECCION / CATEGORIAS -->
+  <section id="coleccion">
+    <div class="contenedor">
+      <div class="titulo-seccion">
+        <h2>Nuestra colección</h2>
+        <p>Elegí una categoría y encontrá el producto ideal para tu descanso.</p>
+      </div>
+      <div class="grid-categorias" id="grid-categorias"></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section id="testimonios">
+    <div class="contenedor">
+      <div class="titulo-seccion">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <p>Experiencias reales de quienes ya duermen mejor con Gala.</p>
+      </div>
+      <div class="testimonios-wrap">
+        <div class="testimonios-track" id="testimonios-track"></div>
+        <div class="testi-flechas">
+          <button class="testi-flecha" aria-label="Anterior" onclick="testiMover(-1)">&#8592;</button>
+          <button class="testi-flecha" aria-label="Siguiente" onclick="testiMover(1)">&#8594;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============================================================
+     CATALOGO ONLINE (todas las categorías o una filtrada)
+     ============================================================ -->
+<section class="pantalla-catalogo" id="pantalla-catalogo">
+  <div class="contenedor">
+    <div class="catalogo-cabecera">
+      <div class="catalogo-titulo">
+        <a href="#/" class="catalogo-volver" onclick="irVista('inicio')">&#8592; Volver al inicio</a>
+        <h2 id="catalogo-titulo-texto">Catálogo online</h2>
+        <p id="catalogo-subtitulo">Todos nuestros productos en un solo lugar.</p>
+      </div>
+    </div>
+    <div class="chips" id="catalogo-chips"></div>
+    <div class="grid-productos" id="catalogo-grid"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PANEL DE OFERTAS
+     ============================================================ -->
+<section class="pantalla-catalogo" id="pantalla-ofertas">
+  <div class="contenedor">
+    <div class="catalogo-cabecera">
+      <div class="catalogo-titulo">
+        <a href="#/" class="catalogo-volver" onclick="irVista('inicio')">&#8592; Volver al inicio</a>
+        <h2>🔥 Panel de ofertas</h2>
+        <p>Productos seleccionados con descuento especial.</p>
+      </div>
+    </div>
+    <div class="chips" id="ofertas-chips"></div>
+    <div class="grid-productos" id="ofertas-grid"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER / VIAS DE CONTACTO
+     ============================================================ -->
+<footer class="contacto" id="contacto">
+  <div class="contenedor">
+    <div class="contacto-titulo">
+      <h2>Vías de Contacto</h2>
+      <p>Estamos listos para asesorarte. ¡Contactanos y empezá a descansar mejor hoy mismo!</p>
+    </div>
+    <div class="grid-contacto">
+      <a class="contacto-card" href="https://wa.me/5493580000000?text=Hola%2C%20quiero%20hacer%20una%20consulta" target="_blank" rel="noopener">
+        <div class="contacto-icono">💬</div>
+        <h3>WhatsApp</h3>
+        <p>+54 9 358 000-0000</p>
+      </a>
+      <div class="contacto-card">
+        <div class="contacto-icono">📍</div>
+        <h3>Nuestro Local</h3>
+        <p>Av. San Martín 1234, Local 3<br>Villa Carlos Paz, Córdoba</p>
+      </div>
+      <a class="contacto-card" href="https://instagram.com/gala.colchoneria" target="_blank" rel="noopener">
+        <div class="contacto-icono">📷</div>
+        <h3>Instagram</h3>
+        <p>@gala.colchoneria</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-final">
+    <p>© 2026 Colchonería y Blanquería Gala — Sitio de muestra (MVP). Todos los datos son ficticios.</p>
+    <div class="footer-redes">
+      <a href="https://wa.me/5493580000000" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+      <a href="https://instagram.com/gala.colchoneria" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+      <a href="#" aria-label="Facebook">f</a>
+    </div>
+  </div>
+</footer>
+
+<!-- BOTON FLOTANTE DE WHATSAPP (visible en toda la web) -->
+<a class="whatsapp-flotante" href="https://wa.me/5493580000000?text=Hola%2C%20quiero%20hacer%20una%20consulta"
+   target="_blank" rel="noopener" aria-label="Chatear por WhatsApp">💬</a>
+
+
+<script>
+/* ============================================================
+   DATOS (todo ficticio, hardcodeado — MVP sin backend)
+   ============================================================ */
+
+const CATEGORIAS = [
+  { id:'colchones', nombre:'Colchones 2 Plazas', img:'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80' },
+  { id:'colchones-1p', nombre:'Colchones 1 Plaza', img:'https://images.unsplash.com/photo-1522771930-78848d9293e8?w=600&q=80' },
+  { id:'bases', nombre:'Bases', img:'https://images.unsplash.com/photo-1615873968403-89e068629265?w=600&q=80' },
+  { id:'conjuntos', nombre:'Conjuntos', img:'https://images.unsplash.com/photo-1567016432779-094069958ea5?w=600&q=80' },
+  { id:'sabanas', nombre:'Sábanas', img:'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600&q=80' },
+  { id:'acolchados', nombre:'Acolchados', img:'https://images.unsplash.com/photo-1584100936595-c0654b55a2e6?w=600&q=80' },
+];
+
+// precioLista null = no hay tachado (no está en oferta)
+const PRODUCTOS = [
+  { id:1, nombre:'Colchón Gala Premium 2 Plazas', categoria:'colchones', precioLista:520000, precioFinal:390000, oferta:true, img:'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=500&q=80' },
+  { id:2, nombre:'Colchón Resortes Confort 2 Plazas', categoria:'colchones', precioLista:410000, precioFinal:410000, oferta:false, img:'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=500&q=80' },
+  { id:3, nombre:'Colchón Viscoelástico Deluxe', categoria:'colchones', precioLista:680000, precioFinal:545000, oferta:true, img:'https://images.unsplash.com/photo-1573883431205-98b5f10aaedb?w=500&q=80' },
+
+  { id:4, nombre:'Colchón Gala Premium 1 Plaza', categoria:'colchones-1p', precioLista:310000, precioFinal:245000, oferta:true, img:'https://images.unsplash.com/photo-1522771930-78848d9293e8?w=500&q=80' },
+  { id:5, nombre:'Colchón Infantil Espuma D20', categoria:'colchones-1p', precioLista:180000, precioFinal:180000, oferta:false, img:'https://images.unsplash.com/photo-1520444451991-3e29a5a1bd7c?w=500&q=80' },
+  { id:6, nombre:'Colchón Individual Firme', categoria:'colchones-1p', precioLista:265000, precioFinal:210000, oferta:true, img:'https://images.unsplash.com/photo-1616627561950-9f746e330187?w=500&q=80' },
+
+  { id:7, nombre:'Base Sommier Reforzada 2 Plazas', categoria:'bases', precioLista:220000, precioFinal:220000, oferta:false, img:'https://images.unsplash.com/photo-1615873968403-89e068629265?w=500&q=80' },
+  { id:8, nombre:'Base Box Tapizada Gris', categoria:'bases', precioLista:260000, precioFinal:199000, oferta:true, img:'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=500&q=80' },
+  { id:9, nombre:'Base Sommier 1 Plaza', categoria:'bases', precioLista:150000, precioFinal:150000, oferta:false, img:'https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=500&q=80' },
+
+  { id:10, nombre:'Conjunto Colchón + Base 2 Plazas', categoria:'conjuntos', precioLista:740000, precioFinal:590000, oferta:true, img:'https://images.unsplash.com/photo-1567016432779-094069958ea5?w=500&q=80' },
+  { id:11, nombre:'Conjunto Premium Pillow Top', categoria:'conjuntos', precioLista:980000, precioFinal:820000, oferta:true, img:'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=500&q=80' },
+  { id:12, nombre:'Conjunto Individual Económico', categoria:'conjuntos', precioLista:430000, precioFinal:430000, oferta:false, img:'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=500&q=80' },
+
+  { id:13, nombre:'Sábanas 2 Plazas 200 Hilos', categoria:'sabanas', precioLista:38000, precioFinal:28000, oferta:true, img:'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=500&q=80' },
+  { id:14, nombre:'Sábanas Percal Blancas', categoria:'sabanas', precioLista:32000, precioFinal:32000, oferta:false, img:'https://images.unsplash.com/photo-1583845112203-29329902332e?w=500&q=80' },
+  { id:15, nombre:'Sábanas 1 Plaza Estampadas', categoria:'sabanas', precioLista:24000, precioFinal:18000, oferta:true, img:'https://images.unsplash.com/photo-1560185009-5bf9f2849488?w=500&q=80' },
+
+  { id:16, nombre:'Acolchado Reversible 2 Plazas', categoria:'acolchados', precioLista:65000, precioFinal:65000, oferta:false, img:'https://images.unsplash.com/photo-1584100936595-c0654b55a2e6?w=500&q=80' },
+  { id:17, nombre:'Acolchado Premium Microfibra', categoria:'acolchados', precioLista:89000, precioFinal:69000, oferta:true, img:'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&q=80' },
+  { id:18, nombre:'Acolchado Infantil Estampado', categoria:'acolchados', precioLista:52000, precioFinal:39000, oferta:true, img:'https://images.unsplash.com/photo-1522691973842-f377578dbfc2?w=500&q=80' },
+];
+
+const TESTIMONIOS = [
+  { nombre:'Florencia Granato', inicial:'F', color:'#6c63ff', texto:'Muy buena atención en el local, cumplieron los tiempos de entrega y el colchón superó mis expectativas. Recomendable.' },
+  { nombre:'Rita Calderón', inicial:'R', color:'#f2994a', texto:'Excelente atención, hermosos productos. Súper recomendable, ya es la segunda vez que compro acá.' },
+  { nombre:'María Murúa', inicial:'M', color:'#eb5757', texto:'Gran calidad y atención 💛🛏️ Me asesoraron muy bien por WhatsApp antes de decidir.' },
+  { nombre:'Carlos Peralta', inicial:'C', color:'#27ae60', texto:'El conjunto que compré es una maravilla, notamos la diferencia desde la primera noche. Volveríamos a elegirlos.' },
+];
+
+const WHATSAPP_NUM = '5493580000000';
+
+/* ============================================================
+   HELPERS
+   ============================================================ */
+function formatoPrecio(n){
+  return '$' + n.toLocaleString('es-AR');
+}
+function nombreCategoria(id){
+  const c = CATEGORIAS.find(c => c.id === id);
+  return c ? c.nombre : id;
+}
+function linkWhatsapp(producto){
+  const msg = 'Hola, quiero consultar por: ' + producto.nombre;
+  return 'https://wa.me/' + WHATSAPP_NUM + '?text=' + encodeURIComponent(msg);
+}
+
+/* ============================================================
+   NAV: submenu + menu móvil
+   ============================================================ */
+function toggleSubmenu(e){
+  e.preventDefault();
+  document.getElementById('item-productos').classList.toggle('abierto');
+}
+document.addEventListener('click', function(e){
+  const item = document.getElementById('item-productos');
+  if(!item.contains(e.target)) item.classList.remove('abierto');
+});
+function toggleMenuMovil(){
+  document.getElementById('nav-links').classList.toggle('abierto');
+}
+function cerrarMenuMovil(){
+  document.getElementById('nav-links').classList.remove('abierto');
+}
+
+/* ============================================================
+   HERO CARRUSEL (fade, sin deslizar)
+   ============================================================ */
+const HERO_IMGS = [
+  'https://images.unsplash.com/photo-1631049035182-249067d7618e?w=1600&q=80',
+  'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1600&q=80',
+  'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1600&q=80',
+];
+let heroIndice = 0;
+let heroTimer = null;
+
+function pintarHero(){
+  const hero = document.getElementById('hero');
+  const dotsWrap = document.getElementById('hero-dots');
+  HERO_IMGS.forEach((url, i) => {
+    const div = document.createElement('div');
+    div.className = 'hero-slide' + (i === 0 ? ' activa' : '');
+    div.style.backgroundImage = "url('" + url + "')";
+    div.dataset.indice = i;
+    hero.insertBefore(div, hero.firstChild);
+
+    const dot = document.createElement('span');
+    dot.className = 'hero-dot' + (i === 0 ? ' activo' : '');
+    dot.onclick = () => heroIrA(i);
+    dotsWrap.appendChild(dot);
+  });
+}
+
+function heroIrA(i){
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+  slides[heroIndice].classList.remove('activa');
+  dots[heroIndice].classList.remove('activo');
+  heroIndice = (i + HERO_IMGS.length) % HERO_IMGS.length;
+  slides[heroIndice].classList.add('activa');
+  dots[heroIndice].classList.add('activo');
+  reiniciarHeroTimer();
+}
+function heroMover(delta){ heroIrA(heroIndice + delta); }
+function reiniciarHeroTimer(){
+  clearInterval(heroTimer);
+  heroTimer = setInterval(() => heroIrA(heroIndice + 1), 5000);
+}
+
+/* ============================================================
+   COLECCION (grid de categorías)
+   ============================================================ */
+function pintarColeccion(){
+  const grid = document.getElementById('grid-categorias');
+  grid.innerHTML = CATEGORIAS.map(cat => (
+    '<a class="cat-card" href="#/categoria/' + cat.id + '" onclick="irCategoria(\'' + cat.id + '\')" ' +
+      'style="background-image:url(\'' + cat.img + '\')">' +
+      '<div class="cat-card-etq">' +
+        '<span>' + cat.nombre + '</span>' +
+        '<span class="cat-card-flecha">→</span>' +
+      '</div>' +
+    '</a>'
+  )).join('');
+}
+
+/* ============================================================
+   TESTIMONIOS (carrusel horizontal con scroll)
+   ============================================================ */
+function pintarTestimonios(){
+  const track = document.getElementById('testimonios-track');
+  track.innerHTML = TESTIMONIOS.map(t => (
+    '<div class="testi-card">' +
+      '<div class="testi-top">' +
+        '<div class="testi-avatar" style="background:' + t.color + '">' + t.inicial + '</div>' +
+        '<div>' +
+          '<div class="testi-nombre">' + t.nombre + '</div>' +
+          '<div class="testi-estrellas">★★★★★</div>' +
+        '</div>' +
+      '</div>' +
+      '<p class="testi-cita">“' + t.texto + '”</p>' +
+      '<div class="testi-verif">✓ Verificado en Google</div>' +
+    '</div>'
+  )).join('');
+}
+function testiMover(delta){
+  const track = document.getElementById('testimonios-track');
+  const card = track.querySelector('.testi-card');
+  const ancho = card ? card.offsetWidth + 18 : 300;
+  track.scrollBy({ left: delta * ancho, behavior: 'smooth' });
+}
+
+/* ============================================================
+   TARJETA DE PRODUCTO (reutilizada en catálogo y ofertas)
+   ============================================================ */
+function tarjetaProducto(p){
+  const pctOff = p.oferta && p.precioLista > p.precioFinal
+    ? Math.round(100 - (p.precioFinal / p.precioLista) * 100)
+    : 0;
+
+  return (
+    '<div class="prod-card">' +
+      '<div class="prod-img-wrap">' +
+        (pctOff > 0 ? '<span class="prod-badge">-' + pctOff + '% OFF</span>' : '') +
+        '<img src="' + p.img + '" alt="' + p.nombre + '" loading="lazy">' +
+      '</div>' +
+      '<div class="prod-body">' +
+        '<span class="prod-cat">' + nombreCategoria(p.categoria) + '</span>' +
+        '<span class="prod-nombre">' + p.nombre + '</span>' +
+        '<div class="prod-precios">' +
+          (p.oferta && p.precioLista > p.precioFinal
+            ? '<div class="prod-precio-lista">' + formatoPrecio(p.precioLista) + '</div>'
+            : '') +
+          '<div class="prod-precio-final">' + formatoPrecio(p.precioFinal) + '</div>' +
+          '<div class="prod-precio-nota">Precio final</div>' +
+        '</div>' +
+        '<a class="btn-consultar" href="' + linkWhatsapp(p) + '" target="_blank" rel="noopener">💬 Consultar</a>' +
+      '</div>' +
+    '</div>'
+  );
+}
+
+function pintarGrid(elementoId, lista){
+  const grid = document.getElementById(elementoId);
+  if(lista.length === 0){
+    grid.innerHTML = '<div class="sin-resultados">No hay productos en esta categoría todavía.</div>';
+    return;
+  }
+  grid.innerHTML = lista.map(tarjetaProducto).join('');
+}
+
+/* ============================================================
+   CHIPS DE CATEGORIA (para catálogo y ofertas)
+   ============================================================ */
+function pintarChips(elementoId, categoriaActiva, base){
+  const chips = document.getElementById(elementoId);
+  const todas = [{ id:'todas', nombre:'Todas' }, ...CATEGORIAS];
+  chips.innerHTML = todas.map(cat => (
+    '<button class="chip' + (cat.id === categoriaActiva ? ' activo' : '') + '" ' +
+      'onclick="' + base + '(\'' + cat.id + '\')">' + cat.nombre + '</button>'
+  )).join('');
+}
+
+/* ============================================================
+   ROUTING POR HASH
+   #/                    -> landing
+   #/categoria/<id>      -> catálogo filtrado por categoría
+   #/catalogo            -> catálogo completo
+   #/ofertas             -> panel de ofertas (todas)
+   ============================================================ */
+function ocultarTodasLasPantallas(){
+  document.getElementById('vista-principal').classList.add('oculta');
+  document.getElementById('pantalla-catalogo').classList.remove('activa');
+  document.getElementById('pantalla-ofertas').classList.remove('activa');
+}
+
+function mostrarCatalogo(categoriaId){
+  ocultarTodasLasPantallas();
+  document.getElementById('pantalla-catalogo').classList.add('activa');
+
+  const lista = categoriaId === 'todas'
+    ? PRODUCTOS
+    : PRODUCTOS.filter(p => p.categoria === categoriaId);
+
+  document.getElementById('catalogo-titulo-texto').textContent =
+    categoriaId === 'todas' ? 'Catálogo online' : nombreCategoria(categoriaId);
+  document.getElementById('catalogo-subtitulo').textContent =
+    categoriaId === 'todas'
+      ? 'Todos nuestros productos en un solo lugar.'
+      : 'Productos de la categoría ' + nombreCategoria(categoriaId) + '.';
+
+  pintarChips('catalogo-chips', categoriaId, 'irCategoria');
+  pintarGrid('catalogo-grid', lista);
+  window.scrollTo({ top:0, behavior:'instant' in window ? 'instant' : 'auto' });
+}
+
+function mostrarOfertas(categoriaId){
+  ocultarTodasLasPantallas();
+  document.getElementById('pantalla-ofertas').classList.add('activa');
+
+  let lista = PRODUCTOS.filter(p => p.oferta === true);
+  if(categoriaId && categoriaId !== 'todas'){
+    lista = lista.filter(p => p.categoria === categoriaId);
+  }
+
+  pintarChips('ofertas-chips', categoriaId || 'todas', 'irOfertasCategoria');
+  pintarGrid('ofertas-grid', lista);
+  window.scrollTo({ top:0, behavior:'instant' in window ? 'instant' : 'auto' });
+}
+
+function mostrarInicio(){
+  ocultarTodasLasPantallas();
+  document.getElementById('vista-principal').classList.remove('oculta');
+}
+
+// Handlers usados desde los links (mantienen el hash sincronizado)
+function irVista(_){ location.hash = '#/'; cerrarMenuMovil(); }
+function irCategoria(id){ location.hash = '#/categoria/' + id; cerrarMenuMovil(); }
+function irCatalogo(){ location.hash = '#/catalogo'; cerrarMenuMovil(); }
+function irOfertas(){ location.hash = '#/ofertas'; cerrarMenuMovil(); }
+function irOfertasCategoria(id){ location.hash = '#/ofertas/' + id; }
+
+function procesarRuta(){
+  const hash = location.hash.replace(/^#\/?/, '');
+  const partes = hash.split('/').filter(Boolean);
+
+  if(partes[0] === 'categoria' && partes[1]){
+    mostrarCatalogo(partes[1]);
+  } else if(partes[0] === 'catalogo'){
+    mostrarCatalogo('todas');
+  } else if(partes[0] === 'ofertas'){
+    mostrarOfertas(partes[1] || 'todas');
+  } else {
+    mostrarInicio();
+  }
+}
+
+/* ============================================================
+   INICIALIZACION
+   ============================================================ */
+window.addEventListener('hashchange', procesarRuta);
+
+document.addEventListener('DOMContentLoaded', function(){
+  pintarHero();
+  pintarColeccion();
+  pintarTestimonios();
+  reiniciarHeroTimer();
+  procesarRuta();
+});
+</script>
+</body>
+</html>
