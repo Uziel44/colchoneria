@@ -3,318 +3,375 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Colchonería y Blanquería Gala | Descansá como te lo merecés</title>
-<meta name="description" content="Colchones, bases, conjuntos, sábanas y acolchados. Catálogo online y ofertas, pedí por WhatsApp.">
+<title>Electro Express | Todo lo que necesitás en un solo lugar</title>
+<meta name="description" content="Electrodomésticos, hogar y más en 6 cuotas o al contado. Mirá el catálogo online, los combos y consultá por WhatsApp.">
+<meta name="theme-color" content="#0e6b5f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230e6b5f'/%3E%3Cpath d='M56 14 24 56h24l-4 30 32-42H52z' fill='white'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap">
 <style>
   :root{
-    --marron:#8a5a3b;
-    --marron-osc:#5e3b24;
-    --crema:#f6efe6;
-    --crema-2:#efe4d4;
-    --carbon:#1b1b1b;
-    --carbon-2:#2a2a2a;
-    --texto:#2c2420;
-    --texto-suave:#6b5f56;
-    --blanco:#ffffff;
-    --precio:#a3372a;
+    --tinta:#12332f;
+    --tinta-suave:#4b6662;
+    --verde:#0e6b5f;
+    --verde-osc:#0b4a42;
+    --noche:#0b3a34;
+    --noche-2:#114a42;
+
+    --menta:#d4f4ee;
+    --menta-2:#a9e6da;
+    --menta-borde:#6fcfc0;
+    --rosa:#fde0ec;
+    --rosa-2:#f8b9d4;
+    --rosa-borde:#ee9fc2;
+    --rosa-fuerte:#bf2f6c;
+    --lavanda:#e9e1fc;
+    --lavanda-2:#d3c7f6;
+    --lavanda-borde:#b9a7ee;
+    --lavanda-fuerte:#5b3fb5;
+
+    --fondo:#fffbfd;
+    --linea:#e3ece9;
     --exito:#25d366;
-    --radius:14px;
-    --sombra:0 8px 24px rgba(0,0,0,.08);
+    --nav-h:68px;
+    --sombra:0 10px 28px rgba(14,107,95,.13);
   }
+
+  /* Código de color del sitio: cada forma de pago tiene su familia */
+  .m-cuotas{--c-fondo:var(--menta);--c-fondo-2:var(--menta-2);--c-borde:var(--menta-borde);--c-texto:var(--verde);}
+  .m-contado{--c-fondo:var(--rosa);--c-fondo-2:var(--rosa-2);--c-borde:var(--rosa-borde);--c-texto:var(--rosa-fuerte);}
+  .m-combos{--c-fondo:var(--lavanda);--c-fondo-2:var(--lavanda-2);--c-borde:var(--lavanda-borde);--c-texto:var(--lavanda-fuerte);}
+
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
   body{
-    font-family:'Inter',Arial,sans-serif;
-    color:var(--texto);
-    background:var(--blanco);
-    line-height:1.5;
+    font-family:'Baloo 2','Trebuchet MS',Arial,sans-serif;
+    font-size:16px;font-weight:500;
+    color:var(--tinta);background:var(--fondo);
+    line-height:1.4;
   }
-  h1,h2,h3,.marca{font-family:'Poppins',Arial,sans-serif;}
   img{max-width:100%;display:block;}
   a{color:inherit;text-decoration:none;}
-  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+  button{font-family:inherit;font-size:inherit;color:inherit;cursor:pointer;border:none;background:none;}
   ul{list-style:none;}
-  .oculto{display:none !important;}
+  :focus-visible{outline:3px solid var(--lavanda-fuerte);outline-offset:3px;border-radius:6px;}
   .contenedor{max-width:1180px;margin:0 auto;padding:0 20px;}
+  .oculto{display:none !important;}
+  /* las anclas (#por-que, #destacados…) no quedan tapadas por el header fijo */
+  #destacados,#por-que,#contacto{scroll-margin-top:calc(var(--nav-h) + 8px);}
 
   /* ===================== NAV ===================== */
   header.nav{
     position:sticky;top:0;z-index:50;
-    background:var(--blanco);
-    border-bottom:1px solid #eee0d0;
+    background:rgba(255,251,253,.94);backdrop-filter:blur(8px);
+    border-bottom:2px solid var(--menta);
   }
   .nav-barra{
-    max-width:1180px;margin:0 auto;padding:14px 20px;
+    max-width:1180px;margin:0 auto;padding:0 20px;height:var(--nav-h);
     display:flex;align-items:center;justify-content:space-between;gap:20px;
   }
-  .marca{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--marron-osc);}
+  .marca{display:flex;align-items:center;gap:10px;font-weight:800;font-size:23px;color:var(--verde);font-style:italic;letter-spacing:-.01em;}
   .marca-logo{
-    width:38px;height:38px;border-radius:10px;
-    background:linear-gradient(135deg,var(--marron),var(--marron-osc));
-    display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;
+    width:40px;height:40px;border-radius:12px;background:var(--verde);
+    display:flex;align-items:center;justify-content:center;transform:rotate(-6deg);
+    box-shadow:0 4px 0 var(--menta-2);
   }
-  nav.nav-links{display:flex;align-items:center;gap:28px;}
+  nav.nav-links{display:flex;align-items:center;gap:26px;}
   .nav-item{position:relative;}
   .nav-link{
-    font-weight:500;font-size:15px;color:var(--texto);
+    font-weight:600;font-size:16px;color:var(--tinta);
     display:flex;align-items:center;gap:4px;padding:8px 0;
   }
-  .nav-link:hover{color:var(--marron-osc);}
-  .nav-caret{font-size:10px;transition:transform .2s;}
+  .nav-link:hover{color:var(--verde);}
+  .nav-caret{font-size:11px;transition:transform .2s;}
   .nav-item.abierto .nav-caret{transform:rotate(180deg);}
   .submenu{
-    position:absolute;top:100%;left:0;
-    background:#fff;border-radius:10px;box-shadow:var(--sombra);
-    min-width:190px;padding:8px;display:none;
-    border:1px solid #eee0d0;
+    position:absolute;top:100%;left:-12px;
+    background:#fff;border-radius:18px;box-shadow:var(--sombra);
+    min-width:230px;padding:8px;display:none;border:2px solid var(--menta);
   }
   .nav-item.abierto .submenu{display:block;}
-  .submenu a{
-    display:block;padding:9px 12px;border-radius:7px;font-size:14px;
-  }
-  .submenu a:hover{background:var(--crema);}
+  .submenu a{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:12px;font-size:15px;font-weight:600;}
+  .submenu a:hover{background:var(--menta);}
+  .submenu .sub-todo{color:var(--verde);border-bottom:1px solid var(--linea);border-radius:12px 12px 0 0;margin-bottom:4px;}
   .btn-catalogo{
-    background:var(--carbon);color:#fff;padding:10px 20px;
-    border-radius:30px;font-size:14px;font-weight:600;white-space:nowrap;
+    background:var(--verde);color:#fff;padding:9px 22px;border-radius:999px;
+    font-size:15px;font-weight:700;white-space:nowrap;box-shadow:0 3px 0 var(--verde-osc);
   }
-  .btn-catalogo:hover{background:var(--carbon-2);}
-  .nav-toggle{display:none;font-size:22px;background:none;color:var(--texto);}
+  .btn-catalogo:hover{background:var(--verde-osc);}
+  .nav-toggle{display:none;font-size:26px;width:44px;height:44px;border-radius:12px;color:var(--tinta);}
+  .nav-toggle:hover{background:var(--menta);}
 
-  @media (max-width:820px){
+  @media (max-width:900px){
     nav.nav-links{
-      position:fixed;inset:0 0 0 auto;top:66px;
-      flex-direction:column;align-items:flex-start;
-      background:#fff;width:78%;max-width:300px;height:calc(100vh - 66px);
-      padding:20px;box-shadow:-6px 0 20px rgba(0,0,0,.1);
-      transform:translateX(100%);transition:transform .25s ease;
-      gap:6px;overflow-y:auto;
+      position:fixed;top:var(--nav-h);right:0;bottom:0;width:80%;max-width:320px;
+      flex-direction:column;align-items:flex-start;gap:4px;
+      background:#fff;padding:20px;box-shadow:-8px 0 24px rgba(0,0,0,.12);
+      /* cerrado: se queda dentro del viewport (translateX fuera de pantalla genera scroll horizontal en móvil) */
+      transform:scale(.96);transform-origin:top right;opacity:0;visibility:hidden;
+      transition:transform .2s ease,opacity .2s ease,visibility .2s;overflow-y:auto;
     }
-    nav.nav-links.abierto{transform:translateX(0);}
+    nav.nav-links.abierto{transform:none;opacity:1;visibility:visible;}
     .nav-item{width:100%;}
-    .submenu{position:static;box-shadow:none;border:none;display:none;padding-left:10px;}
-    .nav-item.abierto .submenu{display:block;}
-    .btn-catalogo{width:100%;text-align:center;margin-top:10px;}
+    .nav-link{width:100%;padding:10px 0;}
+    .submenu{position:static;box-shadow:none;border:none;padding:0 0 0 8px;min-width:0;}
+    .btn-catalogo{width:100%;text-align:center;margin-top:12px;}
     .nav-toggle{display:block;}
   }
 
   /* ===================== HERO ===================== */
   .hero{
-    position:relative;height:min(70vh,560px);min-height:360px;
-    overflow:hidden;background:var(--carbon);
+    position:relative;overflow:hidden;
+    height:clamp(560px,82vh,640px);
   }
-  .hero-slide{
-    position:absolute;inset:0;
-    background-size:cover;background-position:center;
-    opacity:0;transition:opacity 1s ease;
+  .slide{
+    position:absolute;inset:0;opacity:0;visibility:hidden;
+    transition:opacity .9s ease,visibility .9s;
+    background:
+      radial-gradient(60% 70% at 88% 12%,var(--c-fondo-2) 0%,transparent 70%),
+      radial-gradient(50% 60% at 6% 100%,var(--c-fondo-2) 0%,transparent 65%),
+      linear-gradient(160deg,var(--c-fondo) 0%,#fff 100%);
   }
-  .hero-slide.activa{opacity:1;}
-  .hero-slide::after{
-    content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.55));
+  .slide.activa{opacity:1;visibility:visible;}
+  .slide-in{
+    max-width:1180px;margin:0 auto;padding:0 20px 24px;height:100%;
+    display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:30px;
   }
-  .hero-texto{
-    position:absolute;inset:0;display:flex;flex-direction:column;
-    align-items:flex-start;justify-content:center;
-    max-width:1180px;margin:0 auto;left:0;right:0;padding:0 20px;color:#fff;z-index:2;
+  .slide-mano{
+    font-family:'Caveat','Comic Sans MS',cursive;font-weight:700;
+    font-size:clamp(28px,4.2vw,42px);line-height:1.05;color:var(--c-texto);
+    max-width:420px;margin-bottom:10px;rotate:-2deg;transform-origin:left;
   }
-  .hero-texto span{
-    background:var(--marron);padding:5px 14px;border-radius:20px;
-    font-size:13px;font-weight:600;margin-bottom:16px;
+  .slide-titulo{
+    font-weight:800;font-size:clamp(40px,7.4vw,78px);line-height:.98;letter-spacing:-.02em;
+    color:var(--verde-osc);text-wrap:balance;margin-bottom:14px;
   }
-  .hero-texto h1{font-size:clamp(28px,5vw,48px);max-width:600px;margin-bottom:14px;}
-  .hero-texto p{font-size:16px;max-width:480px;margin-bottom:22px;color:#f1e9df;}
+  .slide-titulo.marca-grande{font-style:italic;color:var(--verde);}
+  .slide-sello{
+    display:inline-block;padding:4px 18px;border-radius:999px;margin-bottom:14px;
+    background:#fff;border:2px solid var(--c-borde);color:var(--c-texto);font-weight:700;font-size:16px;
+  }
+  .slide-texto{font-size:18px;max-width:440px;margin-bottom:20px;color:var(--tinta);}
+  .slide-precio{
+    display:inline-block;margin-bottom:20px;padding:6px 22px 8px;border-radius:999px;
+    background:var(--verde);color:#fff;font-weight:800;font-size:clamp(20px,3.2vw,28px);
+    box-shadow:0 4px 0 var(--verde-osc);
+  }
+  .slide-precio small{font-size:.62em;font-weight:600;margin-right:6px;opacity:.92;}
   .hero-cta{
-    background:#fff;color:var(--texto);padding:13px 26px;border-radius:30px;
-    font-weight:600;font-size:15px;
+    display:inline-block;background:var(--tinta);color:#fff;padding:12px 28px;border-radius:999px;
+    font-weight:700;font-size:17px;box-shadow:0 4px 0 #000;
   }
-  .hero-cta:hover{background:var(--crema);}
-  .hero-flecha{
-    position:absolute;top:50%;transform:translateY(-50%);z-index:3;
-    width:44px;height:44px;border-radius:50%;
-    background:rgba(255,255,255,.85);color:var(--texto);
-    display:flex;align-items:center;justify-content:center;font-size:18px;
-  }
-  .hero-flecha:hover{background:#fff;}
-  .hero-flecha.izq{left:16px;}
-  .hero-flecha.der{right:16px;}
-  .hero-dots{
-    position:absolute;bottom:18px;left:0;right:0;z-index:3;
-    display:flex;justify-content:center;gap:8px;
-  }
-  .hero-dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.5);}
-  .hero-dot.activo{background:#fff;}
+  .hero-cta:hover{background:#000;}
 
-  /* ===================== SECCIONES GENERALES ===================== */
-  section{padding:64px 0;}
-  .titulo-seccion{text-align:center;margin-bottom:40px;}
-  .titulo-seccion h2{font-size:clamp(24px,4vw,34px);margin-bottom:10px;color:var(--texto);}
-  .titulo-seccion p{color:var(--texto-suave);font-size:15px;max-width:520px;margin:0 auto;}
-
-  /* ===================== COLECCION / CATEGORIAS ===================== */
-  .grid-categorias{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+  .cluster{
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;
+    width:100%;max-width:420px;justify-self:center;
   }
-  .cat-card{
-    position:relative;border-radius:var(--radius);overflow:hidden;
-    height:220px;background-size:cover;background-position:center;
+  .cluster.fila{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;max-width:460px;}
+  .tile{
+    aspect-ratio:1;background:#fff;border-radius:28px;border:2px solid var(--c-borde);
+    display:grid;place-items:center;font-size:clamp(40px,6vw,66px);line-height:1;
     box-shadow:var(--sombra);
   }
-  .cat-card::after{
-    content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.72) 100%);
+  .tile{position:relative;overflow:hidden;}
+  /* foto de producto encima del emoji; si no carga se quita y queda el emoji */
+  .tile img{position:absolute;inset:0;width:100%;height:100%;}
+  .tile img.contain{object-fit:contain;background:#fff;padding:10px;}
+  .tile img.cover{object-fit:cover;}
+  .cluster.fila .tile{width:clamp(74px,12vw,112px);}
+  .cluster .tile:nth-child(odd){rotate:-5deg;}
+  .cluster .tile:nth-child(even){rotate:4deg;}
+  .cluster:not(.fila) .tile:nth-child(3n+2){translate:0 20px;}
+  .hero-plus{
+    width:34px;height:34px;border-radius:50%;background:var(--c-texto);color:#fff;
+    display:grid;place-items:center;font-weight:800;font-size:22px;line-height:1;padding-bottom:3px;
   }
-  .cat-card-etq{
-    position:absolute;left:0;right:0;bottom:0;z-index:2;
-    display:flex;align-items:center;justify-content:space-between;
-    padding:16px 18px;color:#fff;
+  .slide.activa .tile,.slide.activa .hero-plus{
+    animation:aparece .6s cubic-bezier(.2,1.4,.4,1) both;
+    animation-delay:calc(var(--i) * 70ms + 200ms);
   }
-  .cat-card-etq span{font-weight:600;font-size:16px;}
-  .cat-card-flecha{
-    width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.2);
-    display:flex;align-items:center;justify-content:center;font-size:14px;
-    transition:transform .2s;
-  }
-  .cat-card:hover .cat-card-flecha{transform:translateX(3px);background:var(--marron);}
-  @media (max-width:820px){.grid-categorias{grid-template-columns:repeat(2,1fr);}}
-  @media (max-width:520px){.grid-categorias{grid-template-columns:1fr;}}
+  @keyframes aparece{from{opacity:0;scale:.6;}to{opacity:1;scale:1;}}
 
-  /* ===================== TESTIMONIOS ===================== */
-  .testimonios-wrap{position:relative;}
-  .testimonios-track{
-    display:flex;gap:18px;overflow-x:auto;scroll-behavior:smooth;
-    padding-bottom:10px;scrollbar-width:none;
+  .hero-flecha{
+    position:absolute;top:50%;translate:0 -50%;z-index:3;
+    width:44px;height:44px;border-radius:50%;background:#fff;color:var(--tinta);
+    display:flex;align-items:center;justify-content:center;font-size:18px;
+    box-shadow:0 3px 10px rgba(0,0,0,.12);
   }
-  .testimonios-track::-webkit-scrollbar{display:none;}
-  .testi-card{
-    flex:0 0 300px;background:var(--crema);border-radius:var(--radius);
-    padding:22px;border:1px solid #eee0d0;
+  .hero-flecha:hover{background:var(--tinta);color:#fff;}
+  .hero-flecha.izq{left:14px;}
+  .hero-flecha.der{right:14px;}
+  .hero-dots{position:absolute;bottom:16px;left:0;right:0;z-index:3;display:flex;justify-content:center;gap:4px;}
+  .hero-dot{width:26px;height:26px;display:grid;place-items:center;border-radius:50%;}
+  .hero-dot::before{content:"";width:10px;height:10px;border-radius:50%;background:rgba(18,51,47,.28);transition:width .2s,background .2s;}
+  .hero-dot.activo::before{width:26px;border-radius:6px;background:var(--tinta);}
+
+  @media (max-width:820px){
+    .hero{height:auto;min-height:0;}
+    .slide{position:absolute;}
+    .hero{height:640px;}
+    .slide-in{grid-template-columns:1fr;align-content:center;gap:18px;padding:12px 20px 56px;}
+    .slide-texto{font-size:17px;margin-bottom:16px;}
+    .cluster{max-width:270px;gap:10px;}
+    .cluster:not(.fila) .tile:nth-child(3n+2){translate:0 10px;}
+    .tile{border-radius:20px;}
+    .cluster.fila{max-width:320px;}
+    .cluster.fila .tile{width:76px;}
+    .hero-flecha{top:auto;bottom:10px;translate:none;width:38px;height:38px;font-size:15px;}
+    .hero-flecha.izq{left:16px;}
+    .hero-flecha.der{right:16px;}
   }
-  .testi-top{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
-  .testi-avatar{
-    width:40px;height:40px;border-radius:50%;color:#fff;font-weight:700;
-    display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;
+
+  /* ===================== SECCIONES ===================== */
+  .seccion{padding:72px 0;}
+  .seccion.tinte{background:#f3fcf9;}
+  .titulo-seccion{text-align:center;margin-bottom:44px;}
+  .titulo-seccion h2{font-size:clamp(28px,4.4vw,40px);line-height:1.1;margin-bottom:8px;font-weight:800;color:var(--verde-osc);}
+  .titulo-seccion p{color:var(--tinta-suave);font-size:17px;max-width:520px;margin:0 auto;}
+
+  /* ----- Destacados ----- */
+  .destacados-cta{text-align:center;margin-top:36px;}
+  .btn-ver-todo{
+    display:inline-block;background:var(--verde);color:#fff;padding:11px 32px 12px;border-radius:999px;
+    font-weight:700;font-size:18px;box-shadow:0 4px 0 var(--verde-osc);
   }
-  .testi-nombre{font-weight:600;font-size:14px;}
-  .testi-estrellas{color:#e0a339;font-size:13px;}
-  .testi-cita{font-size:14px;color:var(--texto-suave);margin-bottom:12px;min-height:60px;}
-  .testi-verif{font-size:12px;color:#5b8f5f;font-weight:600;}
-  .testi-flechas{display:flex;justify-content:center;gap:12px;margin-top:20px;}
-  .testi-flecha{
-    width:38px;height:38px;border-radius:50%;background:var(--crema-2);
-    display:flex;align-items:center;justify-content:center;font-size:15px;
+  .btn-ver-todo:hover{background:var(--verde-osc);}
+
+  /* ----- Por qué elegirnos ----- */
+  .ticks{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 26px;margin-bottom:34px;}
+  .ticks li{display:flex;align-items:center;gap:8px;font-weight:700;font-size:18px;}
+  .ticks li::before{
+    content:"✓";width:26px;height:26px;border-radius:50%;background:var(--verde);color:#fff;
+    display:grid;place-items:center;font-size:15px;padding-bottom:2px;
   }
-  .testi-flecha:hover{background:var(--marron);color:#fff;}
+  .grid-servicios{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .servicio{background:#fff;border:2px solid var(--menta-2);border-radius:24px;padding:24px 22px;}
+  .servicio-icono{
+    width:52px;height:52px;border-radius:16px;background:var(--menta);
+    display:grid;place-items:center;font-size:26px;margin-bottom:12px;
+  }
+  .servicio h3{font-size:19px;margin-bottom:4px;}
+  .servicio p{font-size:15px;color:var(--tinta-suave);}
+  @media (max-width:760px){.grid-servicios{grid-template-columns:1fr;}}
 
   /* ===================== FOOTER / CONTACTO ===================== */
-  footer.contacto{background:var(--carbon);color:#fff;padding:60px 0 0;}
+  footer.contacto{background:var(--noche);color:#fff;padding:64px 0 0;}
   .contacto-titulo{text-align:center;margin-bottom:36px;}
-  .contacto-titulo h2{font-size:clamp(24px,4vw,32px);margin-bottom:10px;}
-  .contacto-titulo p{color:#c9c1b8;font-size:14px;max-width:440px;margin:0 auto;}
-  .grid-contacto{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:50px;
-  }
-  .contacto-card{
-    background:var(--carbon-2);border-radius:var(--radius);padding:26px 18px;
-    text-align:center;
-  }
-  .contacto-card:hover{background:#333;}
+  .contacto-titulo h2{font-size:clamp(28px,4.4vw,38px);line-height:1.1;margin-bottom:8px;font-weight:800;}
+  .contacto-titulo p{color:#b8e3da;font-size:16px;max-width:440px;margin:0 auto;}
+  .grid-contacto{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:52px;}
+  .contacto-card{background:var(--noche-2);border-radius:24px;padding:26px 18px;text-align:center;display:block;border:2px solid transparent;}
+  a.contacto-card:hover{border-color:var(--menta-borde);}
   .contacto-icono{
-    width:46px;height:46px;border-radius:50%;background:#3a3a3a;
-    display:flex;align-items:center;justify-content:center;font-size:19px;
-    margin:0 auto 14px;
+    width:50px;height:50px;border-radius:50%;background:var(--noche);
+    display:grid;place-items:center;font-size:22px;margin:0 auto 12px;
   }
-  .contacto-card h3{font-size:15px;margin-bottom:6px;}
-  .contacto-card p{font-size:13px;color:#c9c1b8;}
+  .contacto-card h3{font-size:18px;margin-bottom:2px;}
+  .contacto-card p{font-size:15px;color:#b8e3da;}
   @media (max-width:760px){.grid-contacto{grid-template-columns:1fr;}}
-
   .footer-final{
-    border-top:1px solid #333;padding:20px;
+    border-top:1px solid rgba(255,255,255,.14);padding:20px;max-width:1180px;margin:0 auto;
     display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;
   }
-  .footer-final p{font-size:13px;color:#a39a90;}
-  .footer-redes{display:flex;gap:12px;}
-  .footer-redes a{
-    width:36px;height:36px;border-radius:50%;background:var(--carbon-2);
-    display:flex;align-items:center;justify-content:center;font-size:15px;
-  }
-  .footer-redes a:hover{background:var(--marron);}
+  .footer-final p{font-size:14px;color:#9fcfc5;}
+  .footer-redes{display:flex;gap:10px;}
+  .footer-redes a{width:38px;height:38px;border-radius:50%;background:var(--noche-2);display:grid;place-items:center;font-size:16px;}
+  .footer-redes a:hover{background:var(--verde);}
+  .creditos{max-width:1180px;margin:0 auto;padding:0 20px 28px;font-size:13px;color:#9fcfc5;}
+  .creditos summary{cursor:pointer;width:fit-content;font-weight:600;padding:4px 0;}
+  .creditos p{margin-top:6px;}
+  .creditos ul{columns:2 320px;column-gap:28px;margin-top:8px;}
+  .creditos li{break-inside:avoid;padding:2px 0;}
+  .creditos a{text-decoration:underline;}
 
-  /* ===================== WHATSAPP FLOTANTE ===================== */
   .whatsapp-flotante{
-    position:fixed;right:20px;bottom:20px;z-index:60;
-    width:58px;height:58px;border-radius:50%;background:var(--exito);color:#fff;
-    display:flex;align-items:center;justify-content:center;font-size:28px;
-    box-shadow:0 6px 18px rgba(0,0,0,.25);
+    position:fixed;right:18px;bottom:18px;z-index:60;
+    width:60px;height:60px;border-radius:50%;background:var(--exito);color:#fff;
+    display:grid;place-items:center;font-size:29px;box-shadow:0 6px 18px rgba(0,0,0,.28);
+    transition:transform .2s;
   }
-  .whatsapp-flotante:hover{transform:scale(1.06);}
+  .whatsapp-flotante:hover{transform:scale(1.07);}
 
-  /* ===================== PANTALLAS CATALOGO / OFERTAS ===================== */
-  .pantalla-catalogo{
-    display:none;
-    min-height:60vh;
-    padding:36px 0 70px;
-  }
-  .pantalla-catalogo.activa{display:block;}
+  /* ===================== CATALOGO / COMBOS ===================== */
+  .pantalla{display:none;min-height:60vh;padding:34px 0 80px;}
+  .pantalla.activa{display:block;}
   #vista-principal.oculta{display:none;}
+  .cat-cabecera{margin-bottom:22px;}
+  .volver{font-size:15px;font-weight:700;color:var(--verde);display:inline-flex;align-items:center;gap:6px;margin-bottom:6px;}
+  .volver:hover{text-decoration:underline;}
+  .cat-cabecera h1{font-size:clamp(30px,5vw,42px);line-height:1.08;font-weight:800;color:var(--verde-osc);}
+  .cat-cabecera p{font-size:16px;color:var(--tinta-suave);margin-top:4px;max-width:640px;}
 
-  .catalogo-cabecera{
-    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
-    gap:16px;margin-bottom:26px;
-  }
-  .catalogo-volver{
-    font-size:14px;font-weight:600;color:var(--marron-osc);
-    display:flex;align-items:center;gap:6px;
-  }
-  .catalogo-volver:hover{text-decoration:underline;}
-  .catalogo-titulo h2{font-size:26px;}
-  .catalogo-titulo p{font-size:13px;color:var(--texto-suave);}
-
-  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px;}
+  .filtros{display:flex;flex-direction:column;gap:12px;margin-bottom:28px;}
+  .fila-chips{display:flex;flex-wrap:wrap;gap:8px;}
   .chip{
-    padding:9px 16px;border-radius:30px;font-size:13px;font-weight:600;
-    background:var(--crema);color:var(--texto);border:1px solid #eee0d0;
+    padding:5px 16px 6px;border-radius:999px;font-size:15px;font-weight:600;
+    background:#fff;border:2px solid var(--linea);color:var(--tinta);
   }
-  .chip:hover{background:var(--crema-2);}
-  .chip.activo{background:var(--carbon);color:#fff;border-color:var(--carbon);}
+  .chip:hover{border-color:var(--verde);}
+  .chip .n{font-weight:500;opacity:.72;margin-left:4px;}
+  .chip-modo{font-size:16px;font-weight:700;padding:6px 20px 7px;}
+  .chip-modo.m-cuotas.activo{background:var(--menta-2);border-color:var(--menta-borde);color:var(--verde-osc);}
+  .chip-modo.m-contado.activo{background:var(--rosa-2);border-color:var(--rosa-borde);color:#7d1a46;}
+  .chip-modo.m-combos.activo{background:var(--lavanda-2);border-color:var(--lavanda-borde);color:#3b2580;}
+  .chip-modo.m-todos.activo{background:var(--tinta);border-color:var(--tinta);color:#fff;}
+  .chip-cat.activo{background:var(--verde);border-color:var(--verde);color:#fff;}
+  .conteo{font-size:14px;color:var(--tinta-suave);margin-bottom:14px;}
 
-  .grid-productos{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
-  }
-  @media (max-width:980px){.grid-productos{grid-template-columns:repeat(3,1fr);}}
-  @media (max-width:720px){.grid-productos{grid-template-columns:repeat(2,1fr);}}
-  @media (max-width:460px){.grid-productos{grid-template-columns:1fr;}}
+  .grid-productos{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  @media (max-width:1020px){.grid-productos{grid-template-columns:repeat(3,1fr);}}
+  @media (max-width:740px){.grid-productos{grid-template-columns:repeat(2,1fr);gap:12px;}}
 
   .prod-card{
-    background:#fff;border:1px solid #eee0d0;border-radius:var(--radius);
-    overflow:hidden;display:flex;flex-direction:column;
-    box-shadow:0 2px 10px rgba(0,0,0,.04);
+    background:#fff;border:2px solid var(--c-borde);border-radius:24px;overflow:hidden;
+    display:flex;flex-direction:column;
   }
-  .prod-img-wrap{position:relative;height:170px;background:#eee;}
-  .prod-img-wrap img{width:100%;height:100%;object-fit:cover;}
+  .prod-img{
+    position:relative;height:172px;background:var(--c-fondo);display:grid;place-items:center;
+    background-image:radial-gradient(circle at 50% 50%,rgba(255,255,255,.85) 0 38%,transparent 39%);
+  }
+  .prod-img .emoji{font-size:62px;line-height:1;filter:drop-shadow(0 6px 8px rgba(0,0,0,.12));}
+  .prod-img{overflow:hidden;}
+  /* la foto tapa la tarjeta ilustrada; si no carga se la quita y queda el emoji */
+  .prod-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  /* fotos de catálogo con fondo blanco: se ven completas, sin recortar el producto */
+  .prod-img img.contain{object-fit:contain;background:#fff;padding:8px;}
   .prod-badge{
-    position:absolute;top:10px;left:10px;
-    background:var(--carbon);color:#fff;font-size:11px;font-weight:700;
-    padding:4px 9px;border-radius:6px;
+    position:absolute;z-index:1;top:10px;left:10px;background:#fff;color:var(--c-texto);
+    border:2px solid var(--c-borde);font-size:13px;font-weight:700;padding:0 10px 1px;border-radius:999px;
   }
-  .prod-body{padding:14px 14px 16px;display:flex;flex-direction:column;gap:6px;flex:1;}
-  .prod-cat{font-size:11px;text-transform:uppercase;letter-spacing:.03em;color:var(--texto-suave);}
-  .prod-nombre{font-size:14.5px;font-weight:600;color:var(--marron-osc);min-height:38px;}
-  .prod-precios{margin-top:2px;}
-  .prod-precio-lista{font-size:12px;color:#9a9086;text-decoration:line-through;}
-  .prod-precio-final{font-size:19px;font-weight:700;color:var(--precio);}
-  .prod-precio-nota{font-size:11px;color:var(--texto-suave);margin-bottom:6px;}
+  .prod-body{padding:14px 14px 16px;display:flex;flex-direction:column;gap:2px;flex:1;}
+  .prod-cat{font-size:13px;color:var(--tinta-suave);}
+  .prod-nombre{font-size:18px;font-weight:700;line-height:1.15;min-height:41px;}
+  .prod-precios{margin:8px 0 12px;}
+  .prod-precio-etq{font-size:13px;color:var(--tinta-suave);line-height:1.1;}
+  .prod-precio{font-size:28px;font-weight:800;line-height:1.05;color:var(--c-texto);}
   .btn-consultar{
-    margin-top:auto;background:var(--carbon);color:#fff;
-    padding:10px 12px;border-radius:8px;font-size:13.5px;font-weight:600;
-    text-align:center;display:flex;align-items:center;justify-content:center;gap:6px;
+    margin-top:auto;background:var(--tinta);color:#fff;padding:7px 12px 8px;border-radius:999px;
+    font-size:16px;font-weight:700;text-align:center;display:flex;align-items:center;justify-content:center;gap:6px;
   }
-  .btn-consultar:hover{background:var(--carbon-2);}
+  .btn-consultar:hover{background:#000;}
+  @media (max-width:420px){
+    .prod-img{height:140px;}.prod-img .emoji{font-size:50px;}
+    .prod-nombre{font-size:16px;min-height:36px;}.prod-precio{font-size:23px;}
+  }
 
-  .sin-resultados{
-    text-align:center;padding:60px 20px;color:var(--texto-suave);font-size:14px;
+  .sin-resultados{grid-column:1/-1;text-align:center;padding:56px 20px;color:var(--tinta-suave);font-size:17px;}
+  .sin-resultados strong{display:block;color:var(--tinta);font-size:21px;margin-bottom:4px;}
+
+  .grid-combos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  @media (max-width:900px){.grid-combos{grid-template-columns:1fr;}}
+  .combo-items{
+    min-height:150px;padding:16px;background:var(--c-fondo);
+    display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px;
+  }
+  .combo-items .tile{width:78px;font-size:42px;border-radius:22px;box-shadow:none;}
+  .combo-items .hero-plus{width:28px;height:28px;font-size:19px;}
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important;}
   }
 </style>
 </head>
@@ -325,87 +382,87 @@
      ============================================================ -->
 <header class="nav">
   <div class="nav-barra">
-    <a href="#/" class="marca" onclick="irVista('inicio')">
-      <span class="marca-logo">🛏️</span>
-      Gala
+    <a href="#/" class="marca" aria-label="Electro Express, inicio">
+      <span class="marca-logo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>
+      </span>
+      Electro Express
     </a>
 
-    <nav class="nav-links" id="nav-links">
-      <div class="nav-item">
-        <a href="#/" class="nav-link" onclick="irVista('inicio')">Inicio</a>
-      </div>
+    <nav class="nav-links" id="nav-links" aria-label="Principal">
+      <div class="nav-item"><a href="#/" class="nav-link">Inicio</a></div>
 
       <div class="nav-item" id="item-productos">
-        <button class="nav-link" type="button" onclick="toggleSubmenu(event)">
-          Productos <span class="nav-caret">▾</span>
+        <button class="nav-link" type="button" id="btn-productos" aria-expanded="false" aria-controls="submenu-productos">
+          Productos <span class="nav-caret" aria-hidden="true">▾</span>
         </button>
-        <div class="submenu">
-          <a href="#/categoria/colchones" onclick="irCategoria('colchones')">Colchones</a>
-          <a href="#/categoria/bases" onclick="irCategoria('bases')">Bases</a>
-          <a href="#/categoria/conjuntos" onclick="irCategoria('conjuntos')">Conjuntos</a>
-          <a href="#/categoria/sabanas" onclick="irCategoria('sabanas')">Sábanas</a>
-        </div>
+        <div class="submenu" id="submenu-productos"></div>
       </div>
 
-      <div class="nav-item">
-        <a href="#testimonios" class="nav-link" onclick="cerrarMenuMovil()">Testimonios</a>
-      </div>
-      <div class="nav-item">
-        <a href="#contacto" class="nav-link" onclick="cerrarMenuMovil()">Contacto</a>
-      </div>
-      <div class="nav-item">
-        <a href="#/ofertas" class="nav-link" onclick="irOfertas()">Ofertas</a>
-      </div>
+      <div class="nav-item"><a href="#/combos" class="nav-link">Combos</a></div>
+      <div class="nav-item"><a href="#por-que" class="nav-link">Por qué elegirnos</a></div>
+      <div class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></div>
 
-      <a href="#/catalogo" class="btn-catalogo" onclick="irCatalogo()">Catálogo Online</a>
+      <a href="#/catalogo" class="btn-catalogo">Catálogo online</a>
     </nav>
 
-    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" onclick="toggleMenuMovil()">☰</button>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">☰</button>
   </div>
 </header>
 
+<main>
 <!-- ============================================================
-     VISTA PRINCIPAL (landing): hero + colección + testimonios + contacto
+     VISTA PRINCIPAL
      ============================================================ -->
 <div id="vista-principal">
 
-  <!-- HERO CARRUSEL -->
-  <section class="hero" id="hero">
-    <!-- Slides inyectados por JS -->
-    <div class="hero-texto">
-      <span>Envíos a todo Villa Carlos Paz</span>
-      <h1>Descansá como te lo merecés</h1>
-      <p>Colchones, bases y conjuntos con la mejor relación calidad-precio. Asesoramiento personalizado por WhatsApp.</p>
-      <a class="hero-cta" href="#/catalogo" onclick="irCatalogo()">Ver catálogo online</a>
-    </div>
-    <button class="hero-flecha izq" aria-label="Anterior" onclick="heroMover(-1)">&#8592;</button>
-    <button class="hero-flecha der" aria-label="Siguiente" onclick="heroMover(1)">&#8594;</button>
+  <section class="hero" id="hero" aria-roledescription="carrusel" aria-label="Destacados">
+    <!-- slides inyectados por JS -->
+    <button class="hero-flecha izq" type="button" id="hero-prev" aria-label="Anterior">&#8592;</button>
+    <button class="hero-flecha der" type="button" id="hero-next" aria-label="Siguiente">&#8594;</button>
     <div class="hero-dots" id="hero-dots"></div>
   </section>
 
-  <!-- COLECCION / CATEGORIAS -->
-  <section id="coleccion">
+  <section class="seccion" id="destacados">
     <div class="contenedor">
       <div class="titulo-seccion">
-        <h2>Nuestra colección</h2>
-        <p>Elegí una categoría y encontrá el producto ideal para tu descanso.</p>
+        <h2>Productos destacados</h2>
+        <p>Una selección para empezar: electrodomésticos y más, en 6 cuotas o al contado.</p>
       </div>
-      <div class="grid-categorias" id="grid-categorias"></div>
+      <div class="grid-productos" id="grid-destacados"></div>
+      <div class="destacados-cta">
+        <a class="btn-ver-todo" href="#/catalogo">Ver todo el catálogo</a>
+      </div>
     </div>
   </section>
 
-  <!-- TESTIMONIOS -->
-  <section id="testimonios">
+  <section class="seccion tinte" id="por-que">
     <div class="contenedor">
       <div class="titulo-seccion">
-        <h2>Lo que dicen nuestros clientes</h2>
-        <p>Experiencias reales de quienes ya duermen mejor con Gala.</p>
+        <h2>Comprá con tranquilidad</h2>
+        <p>Tu tienda de confianza, con envíos, garantía y marcas reconocidas.</p>
       </div>
-      <div class="testimonios-wrap">
-        <div class="testimonios-track" id="testimonios-track"></div>
-        <div class="testi-flechas">
-          <button class="testi-flecha" aria-label="Anterior" onclick="testiMover(-1)">&#8592;</button>
-          <button class="testi-flecha" aria-label="Siguiente" onclick="testiMover(1)">&#8594;</button>
+      <ul class="ticks">
+        <li>Calidad</li>
+        <li>Buen precio</li>
+        <li>Fácil y rápido</li>
+        <li>100% confiable</li>
+      </ul>
+      <div class="grid-servicios">
+        <div class="servicio">
+          <div class="servicio-icono" aria-hidden="true">🚚</div>
+          <h3>Envíos y entregas</h3>
+          <p>Coordinamos el envío y la entrega de tu compra.</p>
+        </div>
+        <div class="servicio">
+          <div class="servicio-icono" aria-hidden="true">🛡️</div>
+          <h3>Productos garantizados</h3>
+          <p>Todos nuestros productos cuentan con garantía.</p>
+        </div>
+        <div class="servicio">
+          <div class="servicio-icono" aria-hidden="true">⭐</div>
+          <h3>Las mejores marcas</h3>
+          <p>Trabajamos con marcas reconocidas, como TCL y Philco.</p>
         </div>
       </div>
     </div>
@@ -414,38 +471,41 @@
 </div>
 
 <!-- ============================================================
-     CATALOGO ONLINE (todas las categorías o una filtrada)
+     CATALOGO ONLINE
      ============================================================ -->
-<section class="pantalla-catalogo" id="pantalla-catalogo">
+<section class="pantalla" id="pantalla-catalogo" aria-labelledby="catalogo-titulo">
   <div class="contenedor">
-    <div class="catalogo-cabecera">
-      <div class="catalogo-titulo">
-        <a href="#/" class="catalogo-volver" onclick="irVista('inicio')">&#8592; Volver al inicio</a>
-        <h2 id="catalogo-titulo-texto">Catálogo online</h2>
-        <p id="catalogo-subtitulo">Todos nuestros productos en un solo lugar.</p>
-      </div>
+    <div class="cat-cabecera">
+      <a href="#/" class="volver">&#8592; Volver al inicio</a>
+      <h1 id="catalogo-titulo">Catálogo online</h1>
+      <p id="catalogo-subtitulo"></p>
     </div>
-    <div class="chips" id="catalogo-chips"></div>
+    <div class="filtros">
+      <div class="fila-chips" id="catalogo-modos" role="group" aria-label="Forma de pago"></div>
+      <div class="fila-chips" id="catalogo-chips" role="group" aria-label="Categoría"></div>
+    </div>
+    <p class="conteo" id="catalogo-conteo" aria-live="polite"></p>
     <div class="grid-productos" id="catalogo-grid"></div>
   </div>
 </section>
 
 <!-- ============================================================
-     PANEL DE OFERTAS
+     COMBOS
      ============================================================ -->
-<section class="pantalla-catalogo" id="pantalla-ofertas">
+<section class="pantalla" id="pantalla-combos" aria-labelledby="combos-titulo">
   <div class="contenedor">
-    <div class="catalogo-cabecera">
-      <div class="catalogo-titulo">
-        <a href="#/" class="catalogo-volver" onclick="irVista('inicio')">&#8592; Volver al inicio</a>
-        <h2>🔥 Panel de ofertas</h2>
-        <p>Productos seleccionados con descuento especial.</p>
-      </div>
+    <div class="cat-cabecera">
+      <a href="#/" class="volver">&#8592; Volver al inicio</a>
+      <h1 id="combos-titulo">Combos: más y mejor</h1>
+      <p>Llevá varios electrodomésticos juntos y pagalos en 6 cuotas. El precio es el valor de cada cuota.</p>
     </div>
-    <div class="chips" id="ofertas-chips"></div>
-    <div class="grid-productos" id="ofertas-grid"></div>
+    <div class="filtros">
+      <div class="fila-chips" id="combos-modos" role="group" aria-label="Forma de pago"></div>
+    </div>
+    <div class="grid-combos" id="combos-grid"></div>
   </div>
 </section>
+</main>
 
 <!-- ============================================================
      FOOTER / VIAS DE CONTACTO
@@ -453,334 +513,516 @@
 <footer class="contacto" id="contacto">
   <div class="contenedor">
     <div class="contacto-titulo">
-      <h2>Vías de Contacto</h2>
-      <p>Estamos listos para asesorarte. ¡Contactanos y empezá a descansar mejor hoy mismo!</p>
+      <h2>Vías de contacto</h2>
+      <p>Escribinos y te ayudamos a elegir. ¡Llevá lo que necesitás!</p>
     </div>
-    <div class="grid-contacto">
-      <a class="contacto-card" href="https://wa.me/5493580000000?text=Hola%2C%20quiero%20hacer%20una%20consulta" target="_blank" rel="noopener">
-        <div class="contacto-icono">💬</div>
-        <h3>WhatsApp</h3>
-        <p>+54 9 358 000-0000</p>
-      </a>
-      <div class="contacto-card">
-        <div class="contacto-icono">📍</div>
-        <h3>Nuestro Local</h3>
-        <p>Av. San Martín 1234, Local 3<br>Villa Carlos Paz, Córdoba</p>
-      </div>
-      <a class="contacto-card" href="https://instagram.com/gala.colchoneria" target="_blank" rel="noopener">
-        <div class="contacto-icono">📷</div>
-        <h3>Instagram</h3>
-        <p>@gala.colchoneria</p>
-      </a>
-    </div>
+    <div class="grid-contacto" id="grid-contacto"></div>
   </div>
-
   <div class="footer-final">
-    <p>© 2026 Colchonería y Blanquería Gala — Sitio de muestra (MVP). Todos los datos son ficticios.</p>
-    <div class="footer-redes">
-      <a href="https://wa.me/5493580000000" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
-      <a href="https://instagram.com/gala.colchoneria" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
-      <a href="#" aria-label="Facebook">f</a>
-    </div>
+    <p>© 2026 Electro Express — Sitio de muestra (MVP). Los datos de contacto son de ejemplo.</p>
+    <div class="footer-redes" id="footer-redes"></div>
   </div>
+  <details class="creditos">
+    <summary>Créditos de las fotos</summary>
+    <p>Fotos ilustrativas; el producto real puede variar. Las de Naldo son imágenes de catálogo de naldo.com.ar y pertenecen a sus titulares; las demás son de Wikimedia Commons, con licencias libres.</p>
+    <ul id="lista-creditos"></ul>
+  </details>
 </footer>
 
-<!-- BOTON FLOTANTE DE WHATSAPP (visible en toda la web) -->
-<a class="whatsapp-flotante" href="https://wa.me/5493580000000?text=Hola%2C%20quiero%20hacer%20una%20consulta"
-   target="_blank" rel="noopener" aria-label="Chatear por WhatsApp">💬</a>
+<a class="whatsapp-flotante" id="whatsapp-flotante" target="_blank" rel="noopener" aria-label="Chatear por WhatsApp">💬</a>
 
 
 <script>
 /* ============================================================
-   DATOS (todo ficticio, hardcodeado — MVP sin backend)
+   CONFIGURACION: completar con los datos reales del negocio
    ============================================================ */
+const CONFIG = {
+  whatsapp: '5490000000000',                 // solo números, con código de país
+  whatsappVisible: '+54 9 000 000-0000',
+  direccion: 'Dirección del local (a completar)',
+  instagramUsuario: '@usuario_de_instagram',
+  instagramUrl: '#',
+  cuotas: 6,
+};
 
+/* ============================================================
+   DATOS (hardcodeados, sin backend)
+   - modo 'cuotas': el precio es el valor de CADA cuota
+   - modo 'contado': el precio es el valor total
+   - img (opcional): ruta a una foto real; si no hay, se muestra el emoji
+   ============================================================ */
 const CATEGORIAS = [
-  { id:'colchones', nombre:'Colchones 2 Plazas', img:'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80' },
-  { id:'colchones-1p', nombre:'Colchones 1 Plaza', img:'https://images.unsplash.com/photo-1522771930-78848d9293e8?w=600&q=80' },
-  { id:'bases', nombre:'Bases', img:'https://images.unsplash.com/photo-1615873968403-89e068629265?w=600&q=80' },
-  { id:'conjuntos', nombre:'Conjuntos', img:'https://images.unsplash.com/photo-1567016432779-094069958ea5?w=600&q=80' },
-  { id:'sabanas', nombre:'Sábanas', img:'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600&q=80' },
-  { id:'acolchados', nombre:'Acolchados', img:'https://images.unsplash.com/photo-1584100936595-c0654b55a2e6?w=600&q=80' },
+  { id:'linea-blanca',  nombre:'Línea blanca' },
+  { id:'climatizacion', nombre:'Climatización' },
+  { id:'tv-audio',      nombre:'TV y audio' },
+  { id:'cocina',        nombre:'Cocina' },
+  { id:'herramientas',  nombre:'Herramientas y jardín' },
+  { id:'hogar',         nombre:'Hogar y descanso' },
+  { id:'bicicletas',    nombre:'Bicicletas' },
+  { id:'belleza',       nombre:'Belleza' },
+  { id:'infantil',      nombre:'Infantil y juegos' },
 ];
 
-// precioLista null = no hay tachado (no está en oferta)
 const PRODUCTOS = [
-  { id:1, nombre:'Colchón Gala Premium 2 Plazas', categoria:'colchones', precioLista:520000, precioFinal:390000, oferta:true, img:'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=500&q=80' },
-  { id:2, nombre:'Colchón Resortes Confort 2 Plazas', categoria:'colchones', precioLista:410000, precioFinal:410000, oferta:false, img:'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=500&q=80' },
-  { id:3, nombre:'Colchón Viscoelástico Deluxe', categoria:'colchones', precioLista:680000, precioFinal:545000, oferta:true, img:'https://images.unsplash.com/photo-1573883431205-98b5f10aaedb?w=500&q=80' },
+  // ---- En 6 cuotas ----
+  { nombre:'Aire acondicionado',      cat:'climatizacion', modo:'cuotas', precio:250000, emoji:'❄️' },
+  { nombre:'Sommier',                 cat:'hogar',         modo:'cuotas', precio:180000, emoji:'🛏️' },
+  { nombre:'Heladera',                cat:'linea-blanca',  modo:'cuotas', precio:220000, emoji:'🧊' },
+  { nombre:'Lavarropas TCL',          cat:'linea-blanca',  modo:'cuotas', precio:170000, emoji:'🫧' },
+  { nombre:'Lavarropas Philco',       cat:'linea-blanca',  modo:'cuotas', precio:220000, emoji:'🫧' },
+  { nombre:'Parlante grande',         cat:'tv-audio',      modo:'cuotas', precio:250000, emoji:'🔊' },
+  { nombre:'Desmalezadora',           cat:'herramientas',  modo:'cuotas', precio:60000,  emoji:'🌿' },
+  { nombre:'Planetaria',              cat:'cocina',        modo:'cuotas', precio:60000,  emoji:'🥣' },
+  { nombre:'Sillones',                cat:'hogar',         modo:'cuotas', precio:100000, emoji:'🛋️' },
+  { nombre:'Plaza blanda',            cat:'hogar',         modo:'cuotas', precio:100000, emoji:'🛏️' },
+  { nombre:'Casita',                  cat:'infantil',      modo:'cuotas', precio:100000, emoji:'🏠' },
+  { nombre:'Hidro',                   cat:'herramientas',  modo:'cuotas', precio:60000,  emoji:'💦' },
+  { nombre:'Parlante de 10"',         cat:'tv-audio',      modo:'cuotas', precio:80000,  emoji:'🔊' },
+  { nombre:'Parlante de 12"',         cat:'tv-audio',      modo:'cuotas', precio:100000, emoji:'🔊' },
+  { nombre:'Parlante 10x2',           cat:'tv-audio',      modo:'cuotas', precio:120000, emoji:'🔊' },
+  { nombre:'Planchota Shine',         cat:'belleza',       modo:'cuotas', precio:25000,  emoji:'✨' },
+  { nombre:'Planchita Shine',         cat:'belleza',       modo:'cuotas', precio:20000,  emoji:'✨' },
+  { nombre:'Secador',                 cat:'belleza',       modo:'cuotas', precio:20000,  emoji:'💨' },
+  { nombre:'Bicicleta fija',          cat:'bicicletas',    modo:'cuotas', precio:100000, emoji:'🚴' },
+  { nombre:'Bicicletas r29',          cat:'bicicletas',    modo:'cuotas', precio:110000, emoji:'🚲' },
+  { nombre:'Espejos',                 cat:'hogar',         modo:'cuotas', precio:20000,  emoji:'🪞' },
+  { nombre:'Set de ollas',            cat:'cocina',        modo:'cuotas', precio:40000,  emoji:'🍲' },
+  { nombre:'Maletín de herramientas', cat:'herramientas',  modo:'cuotas', precio:100000, emoji:'🧰' },
+  { nombre:'Sábanas',                 cat:'hogar',         modo:'cuotas', precio:20000,  emoji:'🛌' },
+  { nombre:'Smart TV 58"',            cat:'tv-audio',      modo:'cuotas', precio:300000, emoji:'📺' },
+  { nombre:'Smart TV 75"',            cat:'tv-audio',      modo:'cuotas', precio:500000, emoji:'📺' },
+  { nombre:'Gasebo',                  cat:'herramientas',  modo:'cuotas', precio:60000,  emoji:'⛺' },
+  { nombre:'Cocina',                  cat:'linea-blanca',  modo:'cuotas', precio:140000, emoji:'🍳' },
+  { nombre:'Caja de tubos',           cat:'herramientas',  modo:'cuotas', precio:20000,  emoji:'🔧' },
+  { nombre:'Taladro',                 cat:'herramientas',  modo:'cuotas', precio:50000,  emoji:'🔩' },
+  { nombre:'Motosierra',              cat:'herramientas',  modo:'cuotas', precio:50000,  emoji:'🪚' },
+  { nombre:'Freidora de aceite',      cat:'cocina',        modo:'cuotas', precio:50000,  emoji:'🍟' },
+  { nombre:'Horno eléctrico',         cat:'cocina',        modo:'cuotas', precio:50000,  emoji:'🍞' },
+  { nombre:'Ventilador',              cat:'climatizacion', modo:'cuotas', precio:30000,  emoji:'🌀' },
 
-  { id:4, nombre:'Colchón Gala Premium 1 Plaza', categoria:'colchones-1p', precioLista:310000, precioFinal:245000, oferta:true, img:'https://images.unsplash.com/photo-1522771930-78848d9293e8?w=500&q=80' },
-  { id:5, nombre:'Colchón Infantil Espuma D20', categoria:'colchones-1p', precioLista:180000, precioFinal:180000, oferta:false, img:'https://images.unsplash.com/photo-1520444451991-3e29a5a1bd7c?w=500&q=80' },
-  { id:6, nombre:'Colchón Individual Firme', categoria:'colchones-1p', precioLista:265000, precioFinal:210000, oferta:true, img:'https://images.unsplash.com/photo-1616627561950-9f746e330187?w=500&q=80' },
-
-  { id:7, nombre:'Base Sommier Reforzada 2 Plazas', categoria:'bases', precioLista:220000, precioFinal:220000, oferta:false, img:'https://images.unsplash.com/photo-1615873968403-89e068629265?w=500&q=80' },
-  { id:8, nombre:'Base Box Tapizada Gris', categoria:'bases', precioLista:260000, precioFinal:199000, oferta:true, img:'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=500&q=80' },
-  { id:9, nombre:'Base Sommier 1 Plaza', categoria:'bases', precioLista:150000, precioFinal:150000, oferta:false, img:'https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=500&q=80' },
-
-  { id:10, nombre:'Conjunto Colchón + Base 2 Plazas', categoria:'conjuntos', precioLista:740000, precioFinal:590000, oferta:true, img:'https://images.unsplash.com/photo-1567016432779-094069958ea5?w=500&q=80' },
-  { id:11, nombre:'Conjunto Premium Pillow Top', categoria:'conjuntos', precioLista:980000, precioFinal:820000, oferta:true, img:'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=500&q=80' },
-  { id:12, nombre:'Conjunto Individual Económico', categoria:'conjuntos', precioLista:430000, precioFinal:430000, oferta:false, img:'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=500&q=80' },
-
-  { id:13, nombre:'Sábanas 2 Plazas 200 Hilos', categoria:'sabanas', precioLista:38000, precioFinal:28000, oferta:true, img:'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=500&q=80' },
-  { id:14, nombre:'Sábanas Percal Blancas', categoria:'sabanas', precioLista:32000, precioFinal:32000, oferta:false, img:'https://images.unsplash.com/photo-1583845112203-29329902332e?w=500&q=80' },
-  { id:15, nombre:'Sábanas 1 Plaza Estampadas', categoria:'sabanas', precioLista:24000, precioFinal:18000, oferta:true, img:'https://images.unsplash.com/photo-1560185009-5bf9f2849488?w=500&q=80' },
-
-  { id:16, nombre:'Acolchado Reversible 2 Plazas', categoria:'acolchados', precioLista:65000, precioFinal:65000, oferta:false, img:'https://images.unsplash.com/photo-1584100936595-c0654b55a2e6?w=500&q=80' },
-  { id:17, nombre:'Acolchado Premium Microfibra', categoria:'acolchados', precioLista:89000, precioFinal:69000, oferta:true, img:'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&q=80' },
-  { id:18, nombre:'Acolchado Infantil Estampado', categoria:'acolchados', precioLista:52000, precioFinal:39000, oferta:true, img:'https://images.unsplash.com/photo-1522691973842-f377578dbfc2?w=500&q=80' },
+  // ---- Al contado ----
+  { nombre:'Seca platos',             cat:'cocina',        modo:'contado', precio:35000, emoji:'🍽️' },
+  { nombre:'Tijera',                  cat:'hogar',         modo:'contado', precio:5000,  emoji:'✂️' },
+  { nombre:'Organizadoras',           cat:'hogar',         modo:'contado', precio:40000, emoji:'🧺' },
+  { nombre:'Conservadora',            cat:'cocina',        modo:'contado', precio:30000, emoji:'🥤' },
+  { nombre:'Yogurtera',               cat:'cocina',        modo:'contado', precio:40000, emoji:'🥛' },
+  { nombre:'Patacleta',               cat:'infantil',      modo:'contado', precio:50000, emoji:'🛴' },
+  { nombre:'Muñecas',                 cat:'infantil',      modo:'contado', precio:30000, emoji:'🪆' },
+  { nombre:'Autitos',                 cat:'infantil',      modo:'contado', precio:15000, emoji:'🚗' },
+  { nombre:'Pizarra mágica',          cat:'infantil',      modo:'contado', precio:10000, emoji:'🖍️' },
+  { nombre:'Burbujera',               cat:'infantil',      modo:'contado', precio:15000, emoji:'🫧' },
+  { nombre:'Pistola',                 cat:'infantil',      modo:'contado', precio:20000, emoji:'🔫' },
+  { nombre:'Resorte',                 cat:'infantil',      modo:'contado', precio:3000,  emoji:'🌈' },
 ];
 
-const TESTIMONIOS = [
-  { nombre:'Florencia Granato', inicial:'F', color:'#6c63ff', texto:'Muy buena atención en el local, cumplieron los tiempos de entrega y el colchón superó mis expectativas. Recomendable.' },
-  { nombre:'Rita Calderón', inicial:'R', color:'#f2994a', texto:'Excelente atención, hermosos productos. Súper recomendable, ya es la segunda vez que compro acá.' },
-  { nombre:'María Murúa', inicial:'M', color:'#eb5757', texto:'Gran calidad y atención 💛🛏️ Me asesoraron muy bien por WhatsApp antes de decidir.' },
-  { nombre:'Carlos Peralta', inicial:'C', color:'#27ae60', texto:'El conjunto que compré es una maravilla, notamos la diferencia desde la primera noche. Volveríamos a elegirlos.' },
+const COMBOS = [
+  { nombre:'Combo heladera y lavarropas',            items:['🧊','🫧'],      precio:360000 },
+  { nombre:'Combo heladera y cocina',                items:['🧊','🍳'],      precio:360000 },
+  { nombre:'Combo heladera, lavarropas y cocina',    items:['🧊','🫧','🍳'], precio:550000 },
 ];
 
-const WHATSAPP_NUM = '5493580000000';
+const MODOS = [
+  { id:'todos',   nombre:'Todos',       clase:'m-todos' },
+  { id:'cuotas',  nombre:'En 6 cuotas', clase:'m-cuotas' },
+  { id:'contado', nombre:'Al contado',  clase:'m-contado' },
+  { id:'combos',  nombre:'Combos',      clase:'m-combos' },
+];
+
+/* ============================================================
+   DESTACADOS de la página de inicio (nombres exactos de PRODUCTOS).
+   Mezcla de rubros y de formas de pago; cambialos cuando quieras.
+   ============================================================ */
+const DESTACADOS = [
+  'Heladera', 'Smart TV 58"', 'Aire acondicionado', 'Conservadora',
+  'Lavarropas TCL', 'Bicicletas r29', 'Yogurtera', 'Freidora de aceite',
+  'Taladro', 'Muñecas', 'Planetaria', 'Autitos',
+];
+
+/* ============================================================
+   FOTOS ilustrativas (catálogo de naldo.com.ar y Wikimedia Commons)
+   Una foto por tipo de producto, repetida en las variantes.
+   Los productos que no figuran en FOTO_POR_PRODUCTO usan la tarjeta ilustrada.
+   Para usar una foto propia en un producto: agregale  img:'img/archivo.jpg'  en PRODUCTOS.
+   ============================================================ */
+const FOTOS = {
+  // --- fotos de catálogo de naldo.com.ar (fondo blanco, se ven completas) ---
+  heladera: { src:"https://naldoar.vteximg.com.br/arquivos/ids/193436-400-400/imagenes_ecommerce_electrolux_IF43S-1200x1200.jpg.jpg?v=638814652333730000", ajuste:"contain", autor:"Naldo (ELECTROLUX)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/408l-if43s-plata-inv-autosense-n-f-208529-1/p" },
+  lavarropas: { src:"https://naldoar.vteximg.com.br/arquivos/ids/223931-400-400/FF1224WA0FR-front--1-.jpg?v=639167121274030000", ajuste:"contain", autor:"Naldo (TCL)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/8kg-p108aflw-1400rpm-blanco-inv-a-209143/p" },
+  cocina: { src:"https://naldoar.vteximg.com.br/arquivos/ids/231804-400-400/image-f5628ec18bcf4a998d21663300e3698f.jpg?v=639222442220830000", ajuste:"contain", autor:"Naldo (DREAN)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/cocina-multigas-56-cm-negro-con-encendido-electrico-drean-cd5603an0-49541/p" },
+  tv58: { src:"https://naldoar.vteximg.com.br/arquivos/ids/230743-400-400/1.png?v=639215477635830000", ajuste:"contain", autor:"Naldo (PHILIPS A.V.)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/58-pud7310-77-smart-4k-hdr-usb-google-tv-505999-1/p" },
+  tv75: { src:"https://naldoar.vteximg.com.br/arquivos/ids/230707-400-400/505993.png?v=639215395867100000", ajuste:"contain", autor:"Naldo (PHILIPS A.V.)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/75-pud8100-77-smart-4k-uhd-hdr-titan-amb-505993-1/p" },
+  aire: { src:"https://naldoar.vteximg.com.br/arquivos/ids/176968-400-400/174967-1200x1200.jpg?v=638510333601330000", ajuste:"contain", autor:"Naldo (PHILCO)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/207654/p" },
+  parlante: { src:"https://naldoar.vteximg.com.br/arquivos/ids/203857-400-400/image-360ff1d7c58744c8b8551c238fb1e89b.jpg?v=638999561290230000", ajuste:"contain", autor:"Naldo (EXO)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/parlante-karaoke-con-microfono--led-rgb--bluetooth--infantil-46112/p" },
+  ventilador: { src:"https://naldoar.vteximg.com.br/arquivos/ids/203866-400-400/206991.jpg?v=638968423757530000", ajuste:"contain", autor:"Naldo (TIVOLI)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/206991/p" },
+  sommier: { src:"https://naldoar.vteximg.com.br/arquivos/ids/173655-400-400/20528.jpg?v=638296227411400000", ajuste:"contain", autor:"Naldo (KING KOIL)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/20528/p" },
+  colchon: { src:"https://naldoar.vteximg.com.br/arquivos/ids/158701-400-400/p--13326-4.jpg?v=638193268158870000", ajuste:"contain", autor:"Naldo (INDUCOL)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/13326/p" },
+  sillon: { src:"https://naldoar.vteximg.com.br/arquivos/ids/245014-400-400/image-f6f9d1b5085d42299e711d8839a851d7.jpg?v=639295639150630000", ajuste:"contain", autor:"Naldo (Espácity)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/sillon-berlin-3-cuerpos-shot-mustang-espacity-51057/p" },
+  sabanas: { src:"https://naldoar.vteximg.com.br/arquivos/ids/174398-400-400/602902_1.jpg?v=638337526786230000", ajuste:"contain", autor:"Naldo (LAS CALAS)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/sabanas-lcs150h2p2-premium-2-1-2-pl--602902/p" },
+  ollas: { src:"https://naldoar.vteximg.com.br/arquivos/ids/218545-400-400/image-1e264adc30b14dbdb3d85b09a488d7f6.jpg?v=639128909148830000", ajuste:"contain", autor:"Naldo (Baker's Secret)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/set-ollas-apilables-premium-de-aluminio-fundido-baker-s-secret-47880/p" },
+  freidora: { src:"https://naldoar.vteximg.com.br/arquivos/ids/181724-400-400/AF-ZE5223-A-GREY-copy--2-.jpg?v=638654792169130000", ajuste:"contain", autor:"Naldo (EUROCOOK)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/freidora-de-aire-af-ze7223-a-dig-7lts-208367/p" },
+  horno: { src:"https://naldoar.vteximg.com.br/arquivos/ids/176331-400-400/1.jpg?v=638488725540770000", ajuste:"contain", autor:"Naldo (ULTRACOMB)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/80lts-uc-80cin-horno-electrico-1900w-208076/p" },
+  planetaria: { src:"https://naldoar.vteximg.com.br/arquivos/ids/172137-400-400/207799.jpg?v=638271029124600000", ajuste:"contain", autor:"Naldo (ELECTROLUX)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/batidora-planet--ekm40-inox-5l-12v-1/p" },
+  maletin: { src:"https://naldoar.vteximg.com.br/arquivos/ids/208405-400-400/image-8f72b12ecea44ea88bab139787b5cf2f.jpg?v=639032364055730000", ajuste:"contain", autor:"Naldo (SALKOR)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/set-de-herramientas-40-piezas-con-maletin-46646/p" },
+  taladro: { src:"https://naldoar.vteximg.com.br/arquivos/ids/235425-400-400/image-465c837544a84c7f8e74422ded74c1d1.jpg?v=639240683858000000", ajuste:"contain", autor:"Naldo (Konan)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/taladro-atornillador-percutor-inalambrico--bateria-12-v-konan-49838/p" },
+  motosierra: { src:"https://naldoar.vteximg.com.br/arquivos/ids/196165-400-400/DAM5220-nuevo 1.jpg?v=638848124327970000", ajuste:"contain", autor:"Naldo (DAEWO)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/dam-5220-20-2-0kw-52cc-105557/p" },
+  hidro: { src:"https://naldoar.vteximg.com.br/arquivos/ids/182208-400-400/Compacta-A.jpg?v=638672927591170000", ajuste:"contain", autor:"Naldo (KARCHER)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/k-compacta-1-994-379-0-105343-1/p" },
+  desmalezadora: { src:"https://naldoar.vteximg.com.br/arquivos/ids/179346-400-400/1.jpg?v=638596735792630000", ajuste:"contain", autor:"Naldo (GAMMA)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/g1858ar-prem-quality-59cc-c-arnes-doble-105174-1/p" },
+  gasebo: { src:"https://naldoar.vteximg.com.br/arquivos/ids/179937-400-400/7030-Blanco-1.jpg?v=638611408504500000", ajuste:"contain", autor:"Naldo (OUTDOORS PROFESSIONAL)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/gazebo-rafia-easycamp-3x3-7030-cl-vs-105208/p" },
+  secador: { src:"https://naldoar.vteximg.com.br/arquivos/ids/172100-400-400/207915.jpg?v=638270331625630000", ajuste:"contain", autor:"Naldo (BELLISSIMA)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/secador-pelo-3356-performance-s9-2200w/p" },
+  bicifija: { src:"https://naldoar.vteximg.com.br/arquivos/ids/178817-400-400/17734_45116.jpg?v=638578727512670000", ajuste:"contain", autor:"Naldo (RANDERS)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/bici-magnetica-arg-161-carga-max-100kg-105153-1/p" },
+  bici: { src:"https://naldoar.vteximg.com.br/arquivos/ids/243402-400-400/image-e8b303421cda4dc8bd07fd1b82627cee.jpg?v=639283878620300000", ajuste:"contain", autor:"Naldo (RANDERS)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/bicicleta-mtb-rodado-29-21v-randers-kawill-negro---dorado-s-50834/p" },
+  conservadora: { src:"https://naldoar.vteximg.com.br/arquivos/ids/201695-400-400/1008-2.jpg?v=638954403746330000", ajuste:"contain", autor:"Naldo (OUTDOORS PROFESSIONAL)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/conservadora-34l-art-1008-105686/p" },
+  yogurtera: { src:"https://naldoar.vteximg.com.br/arquivos/ids/226562-400-400/YG-1708-2025.jpg?v=639186102202230000", ajuste:"contain", autor:"Naldo (YELMO)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/yogurtera-yg-1708-1-4lts-8-jarros-208458/p" },
+  munecas: { src:"https://naldoar.vteximg.com.br/arquivos/ids/178232-400-400/302200.jpg?v=638555367302900000", ajuste:"contain", autor:"Naldo (BARBIE)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/t7439-muñeca-barbie-varios-modelos-302200/p" },
+  autitos: { src:"https://naldoar.vteximg.com.br/arquivos/ids/206624-400-400/99900-B.jpg?v=639003638498830000", ajuste:"contain", autor:"Naldo (RASTAR)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/auto-ctl-remot-1-12-ferrari-f1-75-302305-1/p" },
+  pistola: { src:"https://naldoar.vteximg.com.br/arquivos/ids/208159-400-400/118112_X-SHOT-WATER-FAST-FILL-Hydro-Cannon-Open-Box_Front-of-pack.jpg?v=639029580945870000", ajuste:"contain", autor:"Naldo (X-SHOT)", lic:"imagen de catálogo", url:"https://www.naldo.com.ar/pistola-de-agua-water-fast-fill-hydro-ca-302306-1/p" },
+  // --- Wikimedia Commons (licencias libres) ---
+  planchita: { src:"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Hair_straightener_TTH2510_by_Tescom_%282015-09-19%29.JPG/500px-Hair_straightener_TTH2510_by_Tescom_%282015-09-19%29.JPG", autor:"Lombroso", lic:"CC BY-SA 4.0", url:"https://commons.wikimedia.org/wiki/Special:Redirect/page/43542117" },
+  tubos: { src:"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Mechanic%27s_tool_set_with_three_socket_wrenches_and_a_variety_of_sockets_from_Blackhawk_%28cropped%29.jpg/500px-Mechanic%27s_tool_set_with_three_socket_wrenches_and_a_variety_of_sockets_from_Blackhawk_%28cropped%29.jpg", autor:"J.C. Fields (Talk) (Uploads)", lic:"CC BY-SA 3.0", url:"https://commons.wikimedia.org/wiki/Special:Redirect/page/145646608" },
+  secaplatos: { src:"https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Dish_rack.JPG/500px-Dish_rack.JPG", autor:"Mcapdevila", lic:"CC BY-SA 3.0", url:"https://commons.wikimedia.org/wiki/Special:Redirect/page/14655512" },
+  tijera: { src:"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Pair_of_scissors_with_black_handle%2C_2015-06-07.jpg/500px-Pair_of_scissors_with_black_handle%2C_2015-06-07.jpg", autor:"Crisco 1492", lic:"CC BY-SA 4.0", url:"https://commons.wikimedia.org/wiki/Special:Redirect/page/44704958" },
+  organizador: { src:"https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/A_Kaleidoscope_of_Kitchen_and_Home_Storage.jpg/500px-A_Kaleidoscope_of_Kitchen_and_Home_Storage.jpg", autor:"Kaviya Rajendran", lic:"CC BY-SA 4.0", url:"https://commons.wikimedia.org/wiki/Special:Redirect/page/176696520" },
+  burbujas: { src:"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Bubble_Trumpet_By_Tangent_Toys.jpg/500px-Bubble_Trumpet_By_Tangent_Toys.jpg", autor:"Jdlrobson", lic:"CC BY-SA 4.0", url:"https://commons.wikimedia.org/wiki/Special:Redirect/page/145565614" },
+  resorte: { src:"https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/2006-02-04_Metal_spiral.jpg/500px-2006-02-04_Metal_spiral.jpg", autor:"Roger McLassus", lic:"CC BY-SA 3.0", url:"https://commons.wikimedia.org/wiki/Special:Redirect/page/554020" },
+  casita: { src:"https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Playhouse%2C_near_Steps_Bridge_-_geograph.org.uk_-_1606751.jpg/500px-Playhouse%2C_near_Steps_Bridge_-_geograph.org.uk_-_1606751.jpg", autor:"Roger Cornfoot", lic:"CC BY-SA 2.0", url:"https://commons.wikimedia.org/wiki/Special:Redirect/page/14361918" },
+};
+const FOTO_POR_PRODUCTO = {
+  'Aire acondicionado':'aire', 'Heladera':'heladera', 'Lavarropas TCL':'lavarropas', 'Lavarropas Philco':'lavarropas', 'Cocina':'cocina',
+  'Smart TV 58"':'tv58', 'Smart TV 75"':'tv75',
+  'Parlante grande':'parlante', 'Parlante de 10"':'parlante', 'Parlante de 12"':'parlante', 'Parlante 10x2':'parlante',
+  'Ventilador':'ventilador', 'Conservadora':'conservadora',
+  'Sommier':'sommier', 'Plaza blanda':'colchon', 'Sillones':'sillon', 'Sábanas':'sabanas',
+  'Set de ollas':'ollas', 'Freidora de aceite':'freidora', 'Horno eléctrico':'horno', 'Planetaria':'planetaria', 'Yogurtera':'yogurtera',
+  'Maletín de herramientas':'maletin', 'Caja de tubos':'tubos', 'Taladro':'taladro', 'Motosierra':'motosierra',
+  'Hidro':'hidro', 'Desmalezadora':'desmalezadora', 'Gasebo':'gasebo',
+  'Planchota Shine':'planchita', 'Planchita Shine':'planchita', 'Secador':'secador',
+  'Bicicleta fija':'bicifija', 'Bicicletas r29':'bici',
+  'Casita':'casita', 'Muñecas':'munecas', 'Autitos':'autitos', 'Burbujera':'burbujas', 'Pistola':'pistola', 'Resorte':'resorte',
+  'Seca platos':'secaplatos', 'Tijera':'tijera', 'Organizadoras':'organizador',
+};
+PRODUCTOS.forEach(p => { p.foto = FOTO_POR_PRODUCTO[p.nombre]; });
 
 /* ============================================================
    HELPERS
    ============================================================ */
-function formatoPrecio(n){
-  return '$' + n.toLocaleString('es-AR');
-}
-function nombreCategoria(id){
-  const c = CATEGORIAS.find(c => c.id === id);
-  return c ? c.nombre : id;
-}
-function linkWhatsapp(producto){
-  const msg = 'Hola, quiero consultar por: ' + producto.nombre;
-  return 'https://wa.me/' + WHATSAPP_NUM + '?text=' + encodeURIComponent(msg);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const precio = n => '$' + String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+const porModo = m => m === 'todos' ? PRODUCTOS : PRODUCTOS.filter(p => p.modo === m);
+const minPrecio = lista => Math.min(...lista.map(p => p.precio));
+const nombreCategoria = id => (CATEGORIAS.find(c => c.id === id) || { nombre:id }).nombre;
+const plural = (n, uno, varios) => n + ' ' + (n === 1 ? uno : varios);
+const urlWhatsapp = msg => 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(msg);
+const MSG_GENERAL = 'Hola, quiero hacer una consulta';
+
+function mensajeProducto(p){
+  const detalle = p.modo === 'cuotas'
+    ? CONFIG.cuotas + ' cuotas de ' + precio(p.precio)
+    : 'contado ' + precio(p.precio);
+  return 'Hola, quiero consultar por: ' + p.nombre + ' (' + detalle + ')';
 }
 
 /* ============================================================
-   NAV: submenu + menu móvil
+   NAV: submenú + menú móvil
    ============================================================ */
-function toggleSubmenu(e){
-  e.preventDefault();
-  document.getElementById('item-productos').classList.toggle('abierto');
+const elNav = document.getElementById('nav-links');
+const elToggle = document.getElementById('nav-toggle');
+const elItemProd = document.getElementById('item-productos');
+const elBtnProd = document.getElementById('btn-productos');
+
+function pintarSubmenu(){
+  document.getElementById('submenu-productos').innerHTML =
+    '<a class="sub-todo" href="#/catalogo">Todo el catálogo</a>' +
+    CATEGORIAS.map(c => '<a href="#/categoria/' + c.id + '">' + esc(c.nombre) + '</a>').join('');
 }
-document.addEventListener('click', function(e){
-  const item = document.getElementById('item-productos');
-  if(!item.contains(e.target)) item.classList.remove('abierto');
-});
-function toggleMenuMovil(){
-  document.getElementById('nav-links').classList.toggle('abierto');
+function setSubmenu(abierto){
+  elItemProd.classList.toggle('abierto', abierto);
+  elBtnProd.setAttribute('aria-expanded', String(abierto));
 }
-function cerrarMenuMovil(){
-  document.getElementById('nav-links').classList.remove('abierto');
+function setMenuMovil(abierto){
+  elNav.classList.toggle('abierto', abierto);
+  elToggle.setAttribute('aria-expanded', String(abierto));
+  elToggle.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+  elToggle.textContent = abierto ? '✕' : '☰';
 }
+elBtnProd.addEventListener('click', () => setSubmenu(!elItemProd.classList.contains('abierto')));
+elToggle.addEventListener('click', () => setMenuMovil(!elNav.classList.contains('abierto')));
+document.addEventListener('click', e => { if(!elItemProd.contains(e.target)) setSubmenu(false); });
+document.addEventListener('keydown', e => { if(e.key === 'Escape'){ setSubmenu(false); setMenuMovil(false); } });
+// cualquier link del nav cierra los menús
+elNav.addEventListener('click', e => { if(e.target.closest('a')){ setSubmenu(false); setMenuMovil(false); } });
 
 /* ============================================================
-   HERO CARRUSEL (fade, sin deslizar)
+   HERO: carrusel con fade
    ============================================================ */
-const HERO_IMGS = [
-  'https://images.unsplash.com/photo-1631049035182-249067d7618e?w=1600&q=80',
-  'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1600&q=80',
-  'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1600&q=80',
-];
+function datosHero(){
+  const cuotas = porModo('cuotas'), contado = porModo('contado');
+  return [
+    { tono:'m-cuotas', mano:'Todo lo que necesitás… ¡en un solo lugar!',
+      titulo:'Electro Express', marca:true, sello:'Tu tienda de confianza',
+      texto:'Heladeras, lavarropas, aires, TVs y mucho más. Llevalos en ' + CONFIG.cuotas + ' cuotas o al contado.',
+      cta:{ t:'Ver catálogo online', h:'#/catalogo' },
+      tiles:[{foto:'heladera',emoji:'🧊'}, {foto:'tv58',emoji:'📺'}, {foto:'aire',emoji:'❄️'}, {foto:'lavarropas',emoji:'🫧'}, {foto:'sillon',emoji:'🛋️'}, {foto:'bici',emoji:'🚲'}] },
+    { tono:'m-combos', mano:'¡Más y mejor!',
+      titulo:'Combos en ' + CONFIG.cuotas + ' cuotas',
+      texto:'Heladera con lavarropas, heladera con cocina, o los tres juntos.',
+      precio:{ pre:'desde ' + CONFIG.cuotas + ' cuotas de', valor: precio(Math.min(...COMBOS.map(c => c.precio))) },
+      cta:{ t:'Ver combos', h:'#/combos' },
+      tiles:[{foto:'heladera',emoji:'🧊'}, '+', {foto:'lavarropas',emoji:'🫧'}, '+', {foto:'cocina',emoji:'🍳'}], fila:true },
+    { tono:'m-contado', mano:'¡Llevá lo que necesitás!',
+      titulo:'Al contado desde ' + precio(minPrecio(contado)),
+      texto:'Utensilios de cocina, organizadores y juguetes para toda la familia.',
+      cta:{ t:'Ver productos al contado', h:'#/catalogo/contado' },
+      tiles:[{foto:'yogurtera',emoji:'🥛'}, {foto:'conservadora',emoji:'🥤'}, {foto:'munecas',emoji:'🪆'}, {foto:'autitos',emoji:'🚗'}, {foto:'pistola',emoji:'🔫'}, {foto:'tijera',emoji:'✂️'}] },
+  ];
+}
+
+let HERO = [];
 let heroIndice = 0;
 let heroTimer = null;
+const reducirMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function pintarHero(){
+  HERO = datosHero();
   const hero = document.getElementById('hero');
-  const dotsWrap = document.getElementById('hero-dots');
-  HERO_IMGS.forEach((url, i) => {
-    const div = document.createElement('div');
-    div.className = 'hero-slide' + (i === 0 ? ' activa' : '');
-    div.style.backgroundImage = "url('" + url + "')";
-    div.dataset.indice = i;
-    hero.insertBefore(div, hero.firstChild);
-
-    const dot = document.createElement('span');
-    dot.className = 'hero-dot' + (i === 0 ? ' activo' : '');
-    dot.onclick = () => heroIrA(i);
-    dotsWrap.appendChild(dot);
+  const dots = document.getElementById('hero-dots');
+  const slides = HERO.map((s, i) => {
+    const tiles = s.tiles.map((t, k) => {
+      if(t === '+') return '<span class="hero-plus" style="--i:' + k + '" aria-hidden="true">+</span>';
+      const f = FOTOS[t.foto];
+      const clase = f && f.ajuste === 'contain' ? 'contain' : 'cover';
+      return '<div class="tile" style="--i:' + k + '" aria-hidden="true">' + t.emoji +
+        (f ? '<img class="' + clase + '" src="' + esc(f.src) + '" alt="" referrerpolicy="no-referrer" onerror="this.remove()">' : '') +
+      '</div>';
+    }).join('');
+    const titulo = i === 0
+      ? '<h1 class="slide-titulo marca-grande">' + esc(s.titulo) + '</h1>'
+      : '<p class="slide-titulo">' + esc(s.titulo) + '</p>';
+    return (
+      '<div class="slide ' + s.tono + (i === 0 ? ' activa' : '') + '" role="group" aria-roledescription="diapositiva" aria-label="' + (i+1) + ' de ' + HERO.length + '">' +
+        '<div class="slide-in">' +
+          '<div>' +
+            '<p class="slide-mano">' + esc(s.mano) + '</p>' +
+            titulo +
+            (s.sello ? '<span class="slide-sello">' + esc(s.sello) + '</span><br>' : '') +
+            '<p class="slide-texto">' + esc(s.texto) + '</p>' +
+            (s.precio ? '<div class="slide-precio"><small>' + esc(s.precio.pre) + '</small>' + s.precio.valor + '</div><br>' : '') +
+            '<a class="hero-cta" href="' + s.cta.h + '">' + esc(s.cta.t) + '</a>' +
+          '</div>' +
+          '<div class="cluster' + (s.fila ? ' fila' : '') + '">' + tiles + '</div>' +
+        '</div>' +
+      '</div>'
+    );
+  }).join('');
+  hero.insertAdjacentHTML('afterbegin', slides);
+  dots.innerHTML = HERO.map((_, i) =>
+    '<button type="button" class="hero-dot' + (i === 0 ? ' activo' : '') + '" aria-label="Ir a la diapositiva ' + (i+1) + '" data-i="' + i + '"></button>'
+  ).join('');
+  dots.addEventListener('click', e => {
+    const b = e.target.closest('.hero-dot');
+    if(b) heroIrA(Number(b.dataset.i));
   });
+  document.getElementById('hero-prev').addEventListener('click', () => heroIrA(heroIndice - 1));
+  document.getElementById('hero-next').addEventListener('click', () => heroIrA(heroIndice + 1));
+  hero.addEventListener('mouseenter', () => clearInterval(heroTimer));
+  hero.addEventListener('mouseleave', reiniciarHeroTimer);
 }
 
 function heroIrA(i){
-  const slides = document.querySelectorAll('.hero-slide');
+  const slides = document.querySelectorAll('.slide');
   const dots = document.querySelectorAll('.hero-dot');
   slides[heroIndice].classList.remove('activa');
   dots[heroIndice].classList.remove('activo');
-  heroIndice = (i + HERO_IMGS.length) % HERO_IMGS.length;
+  heroIndice = (i + HERO.length) % HERO.length;
   slides[heroIndice].classList.add('activa');
   dots[heroIndice].classList.add('activo');
   reiniciarHeroTimer();
 }
-function heroMover(delta){ heroIrA(heroIndice + delta); }
 function reiniciarHeroTimer(){
   clearInterval(heroTimer);
-  heroTimer = setInterval(() => heroIrA(heroIndice + 1), 5000);
+  if(reducirMovimiento) return;
+  heroTimer = setInterval(() => heroIrA(heroIndice + 1), 6500);
 }
 
 /* ============================================================
-   COLECCION (grid de categorías)
+   HOME: destacados y contacto
    ============================================================ */
-function pintarColeccion(){
-  const grid = document.getElementById('grid-categorias');
-  grid.innerHTML = CATEGORIAS.map(cat => (
-    '<a class="cat-card" href="#/categoria/' + cat.id + '" onclick="irCategoria(\'' + cat.id + '\')" ' +
-      'style="background-image:url(\'' + cat.img + '\')">' +
-      '<div class="cat-card-etq">' +
-        '<span>' + cat.nombre + '</span>' +
-        '<span class="cat-card-flecha">→</span>' +
-      '</div>' +
-    '</a>'
-  )).join('');
+function pintarDestacados(){
+  const lista = DESTACADOS.map(n => PRODUCTOS.find(p => p.nombre === n)).filter(Boolean);
+  document.getElementById('grid-destacados').innerHTML = lista.map(tarjetaProducto).join('');
+}
+
+function pintarContacto(){
+  document.getElementById('grid-contacto').innerHTML =
+    '<a class="contacto-card" href="' + urlWhatsapp(MSG_GENERAL) + '" target="_blank" rel="noopener">' +
+      '<div class="contacto-icono" aria-hidden="true">💬</div><h3>WhatsApp</h3><p>' + esc(CONFIG.whatsappVisible) + '</p></a>' +
+    '<div class="contacto-card">' +
+      '<div class="contacto-icono" aria-hidden="true">📍</div><h3>Nuestro local</h3><p>' + esc(CONFIG.direccion) + '</p></div>' +
+    '<a class="contacto-card" href="' + esc(CONFIG.instagramUrl) + '" target="_blank" rel="noopener">' +
+      '<div class="contacto-icono" aria-hidden="true">📷</div><h3>Instagram</h3><p>' + esc(CONFIG.instagramUsuario) + '</p></a>';
+  document.getElementById('footer-redes').innerHTML =
+    '<a href="' + urlWhatsapp(MSG_GENERAL) + '" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>' +
+    '<a href="' + esc(CONFIG.instagramUrl) + '" target="_blank" rel="noopener" aria-label="Instagram">📷</a>';
+  document.getElementById('whatsapp-flotante').href = urlWhatsapp(MSG_GENERAL);
+}
+
+function pintarCreditos(){
+  const usos = {};
+  PRODUCTOS.forEach(p => { if(p.foto && FOTOS[p.foto]) (usos[p.foto] = usos[p.foto] || []).push(p.nombre); });
+  document.getElementById('lista-creditos').innerHTML = Object.entries(usos).map(([k, nombres]) => {
+    const f = FOTOS[k];
+    return '<li>' + esc(nombres.join(', ')) + ': ' + esc(f.autor) + ', ' + esc(f.lic) +
+      ' (<a href="' + esc(f.url) + '" target="_blank" rel="noopener">origen</a>)</li>';
+  }).join('');
 }
 
 /* ============================================================
-   TESTIMONIOS (carrusel horizontal con scroll)
-   ============================================================ */
-function pintarTestimonios(){
-  const track = document.getElementById('testimonios-track');
-  track.innerHTML = TESTIMONIOS.map(t => (
-    '<div class="testi-card">' +
-      '<div class="testi-top">' +
-        '<div class="testi-avatar" style="background:' + t.color + '">' + t.inicial + '</div>' +
-        '<div>' +
-          '<div class="testi-nombre">' + t.nombre + '</div>' +
-          '<div class="testi-estrellas">★★★★★</div>' +
-        '</div>' +
-      '</div>' +
-      '<p class="testi-cita">“' + t.texto + '”</p>' +
-      '<div class="testi-verif">✓ Verificado en Google</div>' +
-    '</div>'
-  )).join('');
-}
-function testiMover(delta){
-  const track = document.getElementById('testimonios-track');
-  const card = track.querySelector('.testi-card');
-  const ancho = card ? card.offsetWidth + 18 : 300;
-  track.scrollBy({ left: delta * ancho, behavior: 'smooth' });
-}
-
-/* ============================================================
-   TARJETA DE PRODUCTO (reutilizada en catálogo y ofertas)
+   TARJETAS
    ============================================================ */
 function tarjetaProducto(p){
-  const pctOff = p.oferta && p.precioLista > p.precioFinal
-    ? Math.round(100 - (p.precioFinal / p.precioLista) * 100)
-    : 0;
-
+  const clase = p.modo === 'cuotas' ? 'm-cuotas' : 'm-contado';
+  const etiqueta = p.modo === 'cuotas' ? CONFIG.cuotas + ' cuotas' : 'Contado';
+  const etqPrecio = p.modo === 'cuotas' ? CONFIG.cuotas + ' cuotas de' : 'Precio contado';
+  // la tarjeta ilustrada queda debajo: si la foto no carga (o no hay), se ve el emoji
+  const foto = p.foto && FOTOS[p.foto];
+  const src = p.img || (foto && foto.src);
+  const ajuste = !p.img && foto && foto.ajuste === 'contain' ? ' class="contain"' : '';
+  const visual = '<span class="emoji" aria-hidden="true">' + p.emoji + '</span>' +
+    (src ? '<img' + ajuste + ' src="' + esc(src) + '" alt="' + esc(p.nombre) + '" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">' : '');
   return (
-    '<div class="prod-card">' +
-      '<div class="prod-img-wrap">' +
-        (pctOff > 0 ? '<span class="prod-badge">-' + pctOff + '% OFF</span>' : '') +
-        '<img src="' + p.img + '" alt="' + p.nombre + '" loading="lazy">' +
-      '</div>' +
+    '<article class="prod-card ' + clase + '">' +
+      '<div class="prod-img"><span class="prod-badge">' + etiqueta + '</span>' + visual + '</div>' +
       '<div class="prod-body">' +
-        '<span class="prod-cat">' + nombreCategoria(p.categoria) + '</span>' +
-        '<span class="prod-nombre">' + p.nombre + '</span>' +
+        '<span class="prod-cat">' + esc(nombreCategoria(p.cat)) + '</span>' +
+        '<h3 class="prod-nombre">' + esc(p.nombre) + '</h3>' +
         '<div class="prod-precios">' +
-          (p.oferta && p.precioLista > p.precioFinal
-            ? '<div class="prod-precio-lista">' + formatoPrecio(p.precioLista) + '</div>'
-            : '') +
-          '<div class="prod-precio-final">' + formatoPrecio(p.precioFinal) + '</div>' +
-          '<div class="prod-precio-nota">Precio final</div>' +
+          '<div class="prod-precio-etq">' + etqPrecio + '</div>' +
+          '<div class="prod-precio">' + precio(p.precio) + '</div>' +
         '</div>' +
-        '<a class="btn-consultar" href="' + linkWhatsapp(p) + '" target="_blank" rel="noopener">💬 Consultar</a>' +
+        '<a class="btn-consultar" href="' + urlWhatsapp(mensajeProducto(p)) + '" target="_blank" rel="noopener" aria-label="Consultar por ' + esc(p.nombre) + ' por WhatsApp">💬 Consultar</a>' +
       '</div>' +
-    '</div>'
+    '</article>'
   );
 }
 
-function pintarGrid(elementoId, lista){
-  const grid = document.getElementById(elementoId);
-  if(lista.length === 0){
-    grid.innerHTML = '<div class="sin-resultados">No hay productos en esta categoría todavía.</div>';
-    return;
-  }
-  grid.innerHTML = lista.map(tarjetaProducto).join('');
+function tarjetaCombo(c){
+  const items = c.items.map((e, i) =>
+    (i ? '<span class="hero-plus" aria-hidden="true" style="animation:none">+</span>' : '') +
+    '<div class="tile" aria-hidden="true" style="animation:none">' + e + '</div>'
+  ).join('');
+  const msg = 'Hola, quiero consultar por: ' + c.nombre + ' (' + CONFIG.cuotas + ' cuotas de ' + precio(c.precio) + ')';
+  return (
+    '<article class="prod-card m-combos">' +
+      '<div class="combo-items">' + items + '</div>' +
+      '<div class="prod-body">' +
+        '<h3 class="prod-nombre">' + esc(c.nombre) + '</h3>' +
+        '<div class="prod-precios">' +
+          '<div class="prod-precio-etq">' + CONFIG.cuotas + ' cuotas de</div>' +
+          '<div class="prod-precio">' + precio(c.precio) + '</div>' +
+        '</div>' +
+        '<a class="btn-consultar" href="' + urlWhatsapp(msg) + '" target="_blank" rel="noopener" aria-label="Consultar por ' + esc(c.nombre) + ' por WhatsApp">💬 Consultar</a>' +
+      '</div>' +
+    '</article>'
+  );
 }
 
 /* ============================================================
-   CHIPS DE CATEGORIA (para catálogo y ofertas)
+   FILTROS
    ============================================================ */
-function pintarChips(elementoId, categoriaActiva, base){
-  const chips = document.getElementById(elementoId);
-  const todas = [{ id:'todas', nombre:'Todas' }, ...CATEGORIAS];
-  chips.innerHTML = todas.map(cat => (
-    '<button class="chip' + (cat.id === categoriaActiva ? ' activo' : '') + '" ' +
-      'onclick="' + base + '(\'' + cat.id + '\')">' + cat.nombre + '</button>'
-  )).join('');
+function pintarModosFila(elId, modoActivo, cat){
+  const cuenta = { todos:PRODUCTOS.length, cuotas:porModo('cuotas').length, contado:porModo('contado').length, combos:COMBOS.length };
+  document.getElementById(elId).innerHTML = MODOS.map(m => {
+    const href = m.id === 'combos' ? '#/combos' : '#/catalogo/' + m.id + (cat && cat !== 'todas' ? '/' + cat : '');
+    return '<a class="chip chip-modo ' + m.clase + (m.id === modoActivo ? ' activo' : '') + '" href="' + href + '"' +
+      (m.id === modoActivo ? ' aria-current="true"' : '') + '>' +
+      m.nombre + '<span class="n">' + cuenta[m.id] + '</span></a>';
+  }).join('');
+}
+
+function pintarChipsCategoria(modo, catActiva){
+  const base = porModo(modo);
+  const visibles = CATEGORIAS.filter(c => base.some(p => p.cat === c.id));
+  const lista = [{ id:'todas', nombre:'Todas las categorías' }, ...visibles];
+  document.getElementById('catalogo-chips').innerHTML = lista.map(c =>
+    '<a class="chip chip-cat' + (c.id === catActiva ? ' activo' : '') + '" href="#/catalogo/' + modo + (c.id === 'todas' ? '' : '/' + c.id) + '"' +
+    (c.id === catActiva ? ' aria-current="true"' : '') + '>' + esc(c.nombre) + '</a>'
+  ).join('');
 }
 
 /* ============================================================
-   ROUTING POR HASH
-   #/                    -> landing
-   #/categoria/<id>      -> catálogo filtrado por categoría
-   #/catalogo            -> catálogo completo
-   #/ofertas             -> panel de ofertas (todas)
+   VISTAS Y ROUTING POR HASH
+   #/                          inicio
+   #/catalogo                  todo el catálogo
+   #/catalogo/<modo>           modo: todos | cuotas | contado
+   #/catalogo/<modo>/<cat>     modo + categoría
+   #/categoria/<cat>           categoría (todos los modos)
+   #/combos                    combos
+   #por-que, #contacto         anclas del inicio
    ============================================================ */
-function ocultarTodasLasPantallas(){
-  document.getElementById('vista-principal').classList.add('oculta');
-  document.getElementById('pantalla-catalogo').classList.remove('activa');
-  document.getElementById('pantalla-ofertas').classList.remove('activa');
+const elInicio = document.getElementById('vista-principal');
+const elCatalogo = document.getElementById('pantalla-catalogo');
+const elCombos = document.getElementById('pantalla-combos');
+
+function mostrarVista(cual){
+  elInicio.classList.toggle('oculta', cual !== 'inicio');
+  elCatalogo.classList.toggle('activa', cual === 'catalogo');
+  elCombos.classList.toggle('activa', cual === 'combos');
+}
+function arriba(){ window.scrollTo({ top:0, left:0, behavior:'instant' }); }
+
+function mostrarCatalogo(modo, cat){
+  if(!MODOS.some(m => m.id === modo && m.id !== 'combos')) modo = 'todos';
+  const catValida = CATEGORIAS.some(c => c.id === cat);
+  if(!catValida) cat = 'todas';
+
+  mostrarVista('catalogo');
+  let lista = porModo(modo);
+  if(cat !== 'todas') lista = lista.filter(p => p.cat === cat);
+
+  const titulos = { todos:'Catálogo online', cuotas:'Productos en ' + CONFIG.cuotas + ' cuotas', contado:'Productos al contado' };
+  const subs = {
+    todos:'Todos nuestros productos en un solo lugar. En cuotas, el precio es el valor de cada cuota.',
+    cuotas:'El precio de cada producto es el valor de cada una de las ' + CONFIG.cuotas + ' cuotas.',
+    contado:'Precio final pagando al contado.',
+  };
+  const titulo = cat === 'todas' ? titulos[modo] : nombreCategoria(cat);
+  document.getElementById('catalogo-titulo').textContent = titulo;
+  document.getElementById('catalogo-subtitulo').textContent = subs[modo];
+  document.title = titulo + ' | Electro Express';
+
+  pintarModosFila('catalogo-modos', modo, cat);
+  pintarChipsCategoria(modo, cat);
+  document.getElementById('catalogo-conteo').textContent = 'Mostrando ' + plural(lista.length, 'producto', 'productos');
+  document.getElementById('catalogo-grid').innerHTML = lista.length
+    ? lista.map(tarjetaProducto).join('')
+    : '<div class="sin-resultados"><strong>No hay productos con estos filtros</strong>Probá con otra categoría o forma de pago.</div>';
+  arriba();
 }
 
-function mostrarCatalogo(categoriaId){
-  ocultarTodasLasPantallas();
-  document.getElementById('pantalla-catalogo').classList.add('activa');
-
-  const lista = categoriaId === 'todas'
-    ? PRODUCTOS
-    : PRODUCTOS.filter(p => p.categoria === categoriaId);
-
-  document.getElementById('catalogo-titulo-texto').textContent =
-    categoriaId === 'todas' ? 'Catálogo online' : nombreCategoria(categoriaId);
-  document.getElementById('catalogo-subtitulo').textContent =
-    categoriaId === 'todas'
-      ? 'Todos nuestros productos en un solo lugar.'
-      : 'Productos de la categoría ' + nombreCategoria(categoriaId) + '.';
-
-  pintarChips('catalogo-chips', categoriaId, 'irCategoria');
-  pintarGrid('catalogo-grid', lista);
-  window.scrollTo({ top:0, behavior:'instant' in window ? 'instant' : 'auto' });
+function mostrarCombos(){
+  mostrarVista('combos');
+  pintarModosFila('combos-modos', 'combos');
+  document.getElementById('combos-grid').innerHTML = COMBOS.map(tarjetaCombo).join('');
+  document.title = 'Combos | Electro Express';
+  arriba();
 }
 
-function mostrarOfertas(categoriaId){
-  ocultarTodasLasPantallas();
-  document.getElementById('pantalla-ofertas').classList.add('activa');
-
-  let lista = PRODUCTOS.filter(p => p.oferta === true);
-  if(categoriaId && categoriaId !== 'todas'){
-    lista = lista.filter(p => p.categoria === categoriaId);
-  }
-
-  pintarChips('ofertas-chips', categoriaId || 'todas', 'irOfertasCategoria');
-  pintarGrid('ofertas-grid', lista);
-  window.scrollTo({ top:0, behavior:'instant' in window ? 'instant' : 'auto' });
+function mostrarInicio(ancla){
+  mostrarVista('inicio');
+  document.title = 'Electro Express | Todo lo que necesitás en un solo lugar';
+  const el = ancla && document.getElementById(ancla);
+  if(el) el.scrollIntoView({ behavior:'smooth', block:'start' }); else arriba();
 }
-
-function mostrarInicio(){
-  ocultarTodasLasPantallas();
-  document.getElementById('vista-principal').classList.remove('oculta');
-}
-
-// Handlers usados desde los links (mantienen el hash sincronizado)
-function irVista(_){ location.hash = '#/'; cerrarMenuMovil(); }
-function irCategoria(id){ location.hash = '#/categoria/' + id; cerrarMenuMovil(); }
-function irCatalogo(){ location.hash = '#/catalogo'; cerrarMenuMovil(); }
-function irOfertas(){ location.hash = '#/ofertas'; cerrarMenuMovil(); }
-function irOfertasCategoria(id){ location.hash = '#/ofertas/' + id; }
 
 function procesarRuta(){
-  const hash = location.hash.replace(/^#\/?/, '');
-  const partes = hash.split('/').filter(Boolean);
-
+  const partes = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean);
   if(partes[0] === 'categoria' && partes[1]){
-    mostrarCatalogo(partes[1]);
+    mostrarCatalogo('todos', partes[1]);
   } else if(partes[0] === 'catalogo'){
-    mostrarCatalogo('todas');
-  } else if(partes[0] === 'ofertas'){
-    mostrarOfertas(partes[1] || 'todas');
+    mostrarCatalogo(partes[1] || 'todos', partes[2]);
+  } else if(partes[0] === 'combos'){
+    mostrarCombos();
   } else {
-    mostrarInicio();
+    mostrarInicio(partes[0]);
   }
 }
 
@@ -788,11 +1030,12 @@ function procesarRuta(){
    INICIALIZACION
    ============================================================ */
 window.addEventListener('hashchange', procesarRuta);
-
 document.addEventListener('DOMContentLoaded', function(){
+  pintarSubmenu();
   pintarHero();
-  pintarColeccion();
-  pintarTestimonios();
+  pintarDestacados();
+  pintarContacto();
+  pintarCreditos();
   reiniciarHeroTimer();
   procesarRuta();
 });
